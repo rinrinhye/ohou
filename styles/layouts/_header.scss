@@ -1,0 +1,224 @@
+.header {
+  height: 50px;
+  border-bottom: 1px solid $border;
+
+  &__inner {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+    padding: 0 $sm-margin;
+  }
+
+  .menu-button {
+    width: 36px;
+    height: 36px;
+    background: url('assets/ico_menu.svg') no-repeat;
+    background-size: contain;
+  }
+
+  .logo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 71px;
+    height: 28px;
+    transform: translate(-50%, -50%);
+
+    a {
+      display: block;
+      width: 100%;
+      height: 100%;
+      background: url('assets/logo.svg') no-repeat;
+      background-size: contain;
+    }
+  }
+
+  &__button-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    .header__search-button,
+    .header__cart-button {
+      width: 30px;
+      height: 30px;
+      cursor: pointer;
+      background-repeat: no-repeat;
+      background-size: contain;
+    }
+
+    .header__search-button {
+      width: 28px;
+      height: 28px;
+      background-image: url('assets/ico_search.svg');
+
+      &:hover,
+      &:active {
+        background-image: url('assets/ico_search_blue.svg');
+      }
+    }
+
+    .header__cart-button {
+      display: block;
+      background-image: url('assets/ico_cart.svg');
+
+      &:hover,
+      &:active {
+        background-image: url('assets/ico_cart_blue.svg');
+      }
+    }
+  }
+
+  @include responsive(M) {
+    position: sticky;
+    top: 0;
+    height: 80px;
+
+    &__inner {
+      padding: 0 $md-margin;
+    }
+
+    &__wrap-left,
+    &__wrap-right {
+      display: flex;
+      align-items: center;
+    }
+
+    .logo {
+      position: static;
+      margin-right: 20px;
+      transform: translate(0);
+    }
+
+    &__gnb-list {
+      display: flex;
+    }
+
+    &__gnb-item {
+      a {
+        @include text-style(18);
+        padding: 20px 5px;
+        margin: 0 10px;
+        font-weight: 700;
+      }
+
+      &.on,
+      &:hover {
+        color: $blue;
+      }
+    }
+
+    &__button-group {
+      gap: 8px;
+    }
+
+    &__auth-group {
+      margin-left: 12px;
+
+      a {
+        @include text-style(14);
+
+        position: relative;
+        padding: 10px;
+
+        &:not(:first-child)::before {
+          position: absolute;
+          top: 50%;
+          left: 0;
+          display: block;
+          width: 1px;
+          height: 20px;
+          color: $font-gray-3;
+          background: $border;
+          transform: translateY(-50%);
+          content: '';
+        }
+      }
+    }
+
+    .header__write-button {
+      margin-left: 10px;
+      color: $white;
+      background: $blue;
+      cursor: pointer;
+
+      &:hover {
+        background: $blue-active;
+      }
+    }
+  }
+
+  @include responsive(L) {
+    &__inner {
+      padding: 0 $lg-margin;
+    }
+
+    .search-group {
+      position: relative;
+      margin-right: 20px;
+
+      &::after {
+        position: absolute;
+        top: 6px;
+        left: 7px;
+        display: block;
+        width: 28px;
+        height: 28px;
+        background: url('assets/ico_search_gray.svg') no-repeat;
+        background-size: contain;
+        content: '';
+      }
+    }
+
+    .search-group__input {
+      width: 196px;
+      height: 40px;
+      padding: 0 14px 0 40px;
+      border: 1px solid $border;
+      border-radius: 4px;
+
+      &::placeholder {
+        color: #bdbdbd;
+      }
+
+      &:hover {
+        background: $background;
+      }
+
+      &:focus {
+        outline: 1px solid $blue;
+      }
+    }
+
+    .header__write-button {
+      position: relative;
+      padding-right: 40px;
+
+      &::after {
+        position: absolute;
+        top: 11px;
+        right: 18px;
+        display: block;
+        width: 9px;
+        height: 9px;
+        border-right: 2px solid $white;
+        border-bottom: 2px solid $white;
+        content: '';
+        transform: rotate(45deg);
+      }
+    }
+  }
+
+  @include responsive(XL) {
+    &__inner {
+      margin: 0 auto;
+      max-width: $xl-max-width;
+    }
+
+    .search-group__input {
+      width: 296px;
+    }
+  }
+}

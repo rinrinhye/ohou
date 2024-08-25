@@ -1,0 +1,84 @@
+$font-size-12: 12px;
+$line-hight-12: 16px;
+$letter-spacing-12: -0.3px;
+
+$font-size-14: 14px;
+$line-hight-14: 18px;
+$letter-spacing-14: -0.3px;
+
+$font-size-15: 15px;
+$line-hight-15: 22px;
+$letter-spacing-15: -0.3px;
+
+$font-size-16: 16px;
+$line-hight-16: 20px;
+$letter-spacing-16: -0.3px;
+
+$font-size-17: 17px;
+$line-hight-17: 23px;
+$letter-spacing-17: -0.3px;
+
+$font-size-18: 18px;
+$line-hight-18: 18px;
+$letter-spacing-18: -0.3px;
+
+@mixin text-style-12() {
+  font-size: $font-size-12;
+  line-height: $line-hight-12;
+  letter-spacing: $letter-spacing-12;
+}
+
+@mixin text-style-14() {
+  font-size: $font-size-14;
+  line-height: $line-hight-14;
+  letter-spacing: $letter-spacing-14;
+}
+
+@mixin text-style-15() {
+  font-size: $font-size-15;
+  line-height: $line-hight-15;
+  letter-spacing: $letter-spacing-15;
+}
+
+@mixin text-style-16() {
+  font-size: $font-size-16;
+  line-height: $line-hight-16;
+  letter-spacing: $letter-spacing-16;
+}
+
+@mixin text-style-17() {
+  font-size: $font-size-17;
+  line-height: $line-hight-17;
+  letter-spacing: $letter-spacing-17;
+}
+
+@mixin text-style-18() {
+  font-size: $font-size-18;
+  line-height: $line-hight-18;
+  letter-spacing: $letter-spacing-18;
+}
+
+@mixin text-style($font-size, $color: false) {
+  @if $font-size == 12 {
+    @include text-style-12;
+  }
+  @if $font-size == 14 {
+    @include text-style-14;
+  }
+  @if $font-size == 15 {
+    @include text-style-15;
+  }
+  @if $font-size == 16 {
+    @include text-style-16;
+  }
+  @if $font-size == 17 {
+    @include text-style-17;
+  }
+  @if $font-size == 18 {
+    @include text-style-18;
+  }
+
+  @if (type-of($color) == color) {
+    color: $color;
+  }
+}

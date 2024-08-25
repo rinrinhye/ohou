@@ -1,0 +1,60 @@
+.desktop-only {
+  @media screen and (width < $lg-breakpoint) {
+    display: none !important;
+  }
+}
+
+.desktop-hidden {
+  @media screen and (width > $lg-breakpoint) {
+    display: none !important;
+  }
+}
+
+.sm-hidden {
+  @media screen and (width < $md-breakpoint) {
+    display: none !important;
+  }
+}
+
+.md-hidden {
+  @media screen and (width >= $md-breakpoint) and (width < $lg-breakpoint) {
+    display: none !important;
+  }
+}
+
+.lg-hidden {
+  @media screen and (width >= $lg-breakpoint) and (width < $xl-breakpoint) {
+    display: none !important;
+  }
+}
+
+.xl-hidden {
+  @media screen and (width >= $xl-breakpoint) {
+    display: none !important;
+  }
+}
+
+.sm-only {
+  @media screen and (width >= $md-breakpoint) {
+    display: none !important;
+  }
+}
+
+.xl-only {
+  @media screen and (width < $xl-breakpoint) {
+    display: none !important;
+  }
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+}
+
+.none {
+  display: none;
+}
