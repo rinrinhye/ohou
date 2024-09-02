@@ -1,0 +1,19 @@
+.section__container {
+  padding: 0 $sm-margin;
+  padding-bottom: 20px;
+  margin-bottom: 40px;
+
+  @include responsive(M) {
+    padding: 0 $md-margin;
+  }
+
+  @include responsive(L) {
+    padding: 0 $lg-margin;
+  }
+
+  @include responsive(XL) {
+    max-width: $xl-max-width;
+    padding: 0 $xl-margin;
+    margin: 0 auto;
+  }
+}

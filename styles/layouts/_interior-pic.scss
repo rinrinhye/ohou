@@ -1,0 +1,51 @@
+.interior-pic {
+  &__list {
+    display: flex;
+    gap: 12px;
+  }
+
+  &__item {
+    position: relative;
+    flex: 1 1 10%;
+
+    &:hover {
+      .photo-card__image {
+        transform: scale(1.05);
+      }
+    }
+  }
+
+  &__item-overlay {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+
+  &__author-group {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    padding: 8px;
+  }
+
+  &__avatar {
+    width: 24px;
+    height: 24px;
+    margin-right: 4px;
+  }
+
+  &__author {
+    @include text-style(12, $white);
+    font-weight: 700;
+  }
+
+  .scrap-button {
+    right: 8px;
+    bottom: 8px;
+  }
+}

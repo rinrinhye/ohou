@@ -1,0 +1,108 @@
+%product {
+  .product__wrap {
+    display: block;
+  }
+
+  .product__image {
+    position: relative;
+    overflow: hidden;
+    border-radius: 4px;
+
+    > img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+  }
+
+  .badge__time {
+    position: absolute;
+    top: 8px;
+    left: 8px;
+  }
+
+  .scrap-button {
+    right: 12px;
+    bottom: 12px;
+  }
+
+  .product__title-group {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+
+    .product__brand {
+      @include text-style(11, $font-gray-2);
+    }
+
+    .product__name {
+      @include text-style(14, $font-gray-1);
+      display: -webkit-box;
+      overflow: hidden;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 3;
+    }
+  }
+
+  .product__review-group {
+    display: flex;
+
+    .product__star-icon {
+      display: block;
+      width: 15px;
+      height: 15px;
+    }
+
+    .product__rating,
+    .product__review {
+      @include text-style(12);
+      margin-left: 4px;
+      font-weight: 700;
+    }
+
+    .product__review {
+      color: $font-gray-4;
+    }
+  }
+
+  .product__price-group {
+    @include text-style(20);
+    display: flex;
+    align-items: center;
+    font-weight: 700;
+
+    .product__discount-rate {
+      display: flex;
+      gap: -3px;
+
+      .discount-rate__number,
+      .discount-rate__percentage {
+        color: $ohou-blue;
+      }
+    }
+  }
+}
+
+.product {
+  @extend %product;
+}
+
+.product__same-day-delivery-group {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  margin-top: 4px;
+  gap: 4px;
+
+  .same-day-delivery__img {
+    height: 15px;
+  }
+
+  .same-day-delivery__text {
+    @include text-style(12, $blue);
+  }
+}
+
+.product__payment-discount {
+}

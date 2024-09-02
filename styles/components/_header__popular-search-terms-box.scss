@@ -1,0 +1,56 @@
+.header__popular-search-terms__box {
+  position: absolute;
+  top: -20px;
+  right: 40px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 28px 12px;
+  background: $white;
+  border: 1px solid $border;
+  border-radius: 6px;
+  opacity: 0;
+  box-shadow: $box-shadow;
+  transition: opacity 0.2s;
+  gap: 8px;
+  z-index: -100; //지우기
+
+  &.on {
+    opacity: 1;
+    transition: opacity 0s;
+  }
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0 16px;
+  }
+
+  &__title {
+    @include text-style(18);
+    font-weight: 700;
+    line-height: 30px;
+    text-align: center;
+  }
+
+  &__close-button {
+    position: relative;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+
+    &::after {
+      position: absolute;
+      top: 15px;
+      left: 15px;
+      display: block;
+      width: 9px;
+      height: 9px;
+      border-top: 1px solid $font-gray-3;
+      border-left: 1px solid $font-gray-3;
+      content: '';
+      transform: rotate(45deg);
+    }
+  }
+}

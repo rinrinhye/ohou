@@ -1,0 +1,65 @@
+.special-promotion {
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  &__item:hover {
+    .photo-card__image {
+      transform: scale(1.05);
+    }
+  }
+
+  &__item-wrap {
+    display: flex;
+    gap: 12px;
+  }
+
+  .photo-card {
+    width: 120px;
+    height: 80px;
+    overflow: hidden;
+    border-radius: 4px;
+
+    &__image {
+      display: block;
+      width: 100%;
+      height: 100%;
+      transition: transform 0.2s;
+    }
+  }
+
+  &__title {
+    @include text-style(16);
+    display: block;
+    margin-top: 6px;
+    font-weight: 700;
+    word-break: keep-all;
+  }
+
+  &__sub-title {
+    @include text-style(14);
+  }
+
+  @include responsive(M) {
+    &__list {
+      flex-direction: row;
+      gap: 16px;
+    }
+
+    &__item {
+      flex: 0 0 calc(25% - 16px);
+    }
+
+    &__item-wrap {
+      flex-direction: column;
+      height: 100%;
+    }
+
+    .photo-card {
+      width: auto;
+      height: auto;
+    }
+  }
+}

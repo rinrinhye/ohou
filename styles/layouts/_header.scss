@@ -1,17 +1,30 @@
 .header {
-  height: 50px;
-  border-bottom: 1px solid $border;
+  &-top {
+    height: 50px;
+    border-bottom: 1px solid $border;
+  }
 
-  &__inner {
+  &-bottom {
+    height: 40px;
+    border-bottom: 1px solid $border;
+  }
+
+  &-top__container,
+  &-bottom__container {
     position: relative;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    width: 100%;
     height: 100%;
     padding: 0 $sm-margin;
   }
 
-  .menu-button {
+  &-bottom__wrap--left {
+    width: 100%;
+  }
+
+  &__menu-button {
     width: 36px;
     height: 36px;
     background: url('assets/ico_menu.svg') no-repeat;
@@ -74,16 +87,33 @@
   @include responsive(M) {
     position: sticky;
     top: 0;
-    height: 80px;
 
-    &__inner {
+    &-top {
+      height: 80px;
+    }
+
+    &-bottom {
+      height: 50px;
+    }
+
+    &-top__container,
+    &-bottom__container {
       padding: 0 $md-margin;
     }
 
-    &__wrap-left,
-    &__wrap-right {
+    &-top__wrap--left,
+    &-top__wrap--right {
       display: flex;
       align-items: center;
+    }
+
+    &-bottom__wrap--left {
+      flex: 1 1 50%;
+      width: 50%;
+    }
+
+    &-bottom__wrap--right {
+      flex: 0 0 192px;
     }
 
     .logo {
@@ -106,7 +136,7 @@
 
       &.on,
       &:hover {
-        color: $blue;
+        color: $ohou-blue;
       }
     }
 
@@ -130,10 +160,10 @@
           display: block;
           width: 1px;
           height: 20px;
-          color: $font-gray-3;
+          color: $font-gray-4;
           background: $border;
-          transform: translateY(-50%);
           content: '';
+          transform: translateY(-50%);
         }
       }
     }
@@ -141,17 +171,18 @@
     .header__write-button {
       margin-left: 10px;
       color: $white;
-      background: $blue;
       cursor: pointer;
+      background: $ohou-blue;
 
       &:hover {
-        background: $blue-active;
+        background: $ohou-blue-active;
       }
     }
   }
 
   @include responsive(L) {
-    &__inner {
+    &-top__container,
+    &-bottom__container {
       padding: 0 $lg-margin;
     }
 
@@ -184,7 +215,7 @@
       }
 
       &:hover {
-        background: $background;
+        background: $background-1;
       }
 
       &:focus {
@@ -212,9 +243,10 @@
   }
 
   @include responsive(XL) {
-    &__inner {
-      margin: 0 auto;
+    &-top__container,
+    &-bottom__container {
       max-width: $xl-max-width;
+      margin: 0 auto;
     }
 
     .search-group__input {
