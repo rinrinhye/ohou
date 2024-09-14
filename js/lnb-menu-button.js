@@ -54,6 +54,22 @@ function clickLnbMenuButton() {
   }
 }
 
+function toggleMobileTabMenuAndlnbMenuPopupOnResize() {
+  if (
+    mobileTabMenu.classList.contains('on') ||
+    lnbMenuPopup.classList.contains('on')
+  ) {
+    if (isResponsiveSM()) {
+      openMobileTabMenu();
+      closeLnbMenuPopup();
+    } else {
+      closeMobileTabMenu();
+      openLnbMenuPopup();
+    }
+  }
+}
+
 lnbMenuButton.addEventListener('click', clickLnbMenuButton);
 overlay.addEventListener('click', closeMobileTabMenu);
 mobileTabMenuCloseButton.addEventListener('click', closeMobileTabMenu);
+window.addEventListener('resize', toggleMobileTabMenuAndlnbMenuPopupOnResize);
