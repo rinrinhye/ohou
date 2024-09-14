@@ -7,20 +7,20 @@
   border-radius: 4px;
 }
 
-.badge__free-shipping {
+.badg--free-shipping {
   @extend %badge;
   color: $font-gray-3;
   background: $background-4;
 }
 
-.badge__special-deal,
-.badge__time {
+.badge--special-deal,
+.badge--time {
   @extend %badge;
   color: $white;
   background: $ohou-red;
 }
 
-.badge__payment-discount {
+.badge--payment-discount {
   @extend %badge;
   margin-top: 6px;
   border: 1px solid $border;
