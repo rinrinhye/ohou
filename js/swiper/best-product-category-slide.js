@@ -6,25 +6,12 @@ const productCategoryControlSlide = new Swiper(
     watchSlidesProgress: true,
     slidesPerGroupAuto: true,
     on: {
-      progress: function (s, progress) {
-        const slide = document.querySelector('.product-category-control-slide');
-        const prevButton = slide.querySelector('.slide-prev');
-        const nextButton = slide.querySelector('.slide-next');
-
-        if (progress === 0) {
-          prevButton.style.display = 'none';
-          nextButton.style.display = 'block';
-        }
-
-        if (progress > 0) {
-          prevButton.style.display = 'block';
-          nextButton.style.display = 'block';
-        }
-
-        if (progress === 1) {
-          nextButton.style.display = 'none';
-        }
-      },
+      progress: (swiper, progress) =>
+        showAndHideSlideArrowButtons(
+          swiper,
+          progress,
+          '.product-category-control-slide'
+        ),
     },
     navigation: {
       nextEl: '.product-category-control-slide .slide-next',

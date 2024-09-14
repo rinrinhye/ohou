@@ -1,55 +1,73 @@
 const header = document.querySelector('.header');
+const headerTop = document.querySelector('.header__top');
 const headerBottom = document.querySelector('.header__bottom');
-let scrollY = window.scrollY;
-let innerWidth = window.innerWidth;
 
-window.addEventListener('scroll', () => {
-  const currentScrollY = window.scrollY;
+function hideHeader() {
+  addClassList(header, 'hidden');
+}
 
-  if (window.innerWidth <= 768) {
-    if (currentScrollY > scrollY) {
-      header.classList.add('hidden');
+function showHeader() {
+  removeClassList(header, 'hidden');
+}
+
+function hideHeaderBottom() {
+  addClassList(headerBottom, 'hidden');
+}
+
+function showHeaderBottom() {
+  removeClassList(headerBottom, 'hidden');
+}
+
+function toggleHeaderVisibilityOnScroll() {
+  const newScrollY = window.scrollY;
+
+  if (isResponsiveSM()) {
+    if (newScrollY > currentScrollY && newScrollY !== 0) {
+      hideHeader();
     } else {
-      header.classList.remove('hidden');
+      showHeader();
     }
   }
 
-  if (window.innerWidth > 768) {
-    if (currentScrollY > scrollY) {
-      headerBottom.classList.add('hidden');
+  if (isResponsiveSM()) {
+    if (newScrollY > currentScrollY) {
+      hideHeaderBottom();
     } else {
-      headerBottom.classList.remove('hidden');
+      showHeaderBottom();
     }
   }
 
-  scrollY = currentScrollY;
-});
+  currentScrollY = newScrollY;
+}
 
-window.addEventListener('resize', () => {
-  let currentInnerWidth = window.innerWidth;
+function toggleHeaderVisibilityOnResize() {
   if (currentInnerWidth > 768 && header.classList.contains('hidden')) {
-    header.classList.remove('hidden');
+    showHeader();
   }
 
-  if (currentInnerWidth < 768) {
+  if (isResponsiveSM()) {
     if (headerBottom.classList.contains('hidden')) {
-      headerBottom.classList.remove('hidden');
+      hideHeaderBottom();
     }
   }
+}
 
-  innerWidth = currentInnerWidth;
-});
-
-const headerTop = document.querySelector('.header-top');
-
-header.addEventListener('mouseenter', () => {
-  if (window.innerWidth > 768) {
-    headerBottom.classList.remove('hidden');
+function showHeaderBottomOnMouseenter() {
+  if (!isResponsiveSM()) {
+    showHeaderBottom();
   }
-});
+}
 
-header.addEventListener('mouseleave', () => {
-  if (window.innerWidth > 768 && window.scrollY !== 0) {
-    headerBottom.classList.add('hidden');
+function hideHeaderBottomOnMouseleave() {
+  if (!isResponsiveSM() && window.scrollY !== 0) {
+    hideHeaderBottom();
   }
-});
+}
+
+window.addEventListener('scroll', toggleHeaderVisibilityOnScroll);
+
+window.addEventListener('resize', toggleHeaderVisibilityOnResize);
+
+header.addEventListener('mouseenter', showHeaderBottomOnMouseenter);
+
+header.addEventListener('mouseleave', hideHeaderBottomOnMouseleave);

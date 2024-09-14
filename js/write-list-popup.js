@@ -3,16 +3,16 @@ const writeListPopup = document.querySelector('.write-list-popup');
 
 const toggleWriteListPopup = () => {
   if (!writeListPopup.classList.contains('on')) {
-    writeListPopup.classList.add('on');
+    addClassList(writeListPopup, 'on');
     window.addEventListener('click', clickOutsideWriteListPopup);
   } else if (writeListPopup.classList.contains('on')) {
-    writeListPopup.classList.remove('on');
+    removeClassList(writeListPopup, 'on');
   }
 };
 
 const clickOutsideWriteListPopup = (e) => {
   if (e.target !== writeButton) {
-    writeListPopup.classList.remove('on');
+    removeClassList(writeListPopup, 'on');
   }
 };
 

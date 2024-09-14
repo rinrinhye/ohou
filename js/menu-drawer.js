@@ -1,16 +1,15 @@
 const menuButton = document.querySelector('.header__menu-button');
 const menuDrawer = document.querySelector('.menu-drawer');
-const overlay = document.querySelector('.overlay');
 
-const openMenuDrawer = () => {
-  menuDrawer.classList.add('on');
-  overlay.classList.add('on');
-};
+function openMenuDrawer() {
+  addClassList(menuDrawer, 'on');
+  openOverlay();
+}
 
-const closeMenuDrawer = () => {
-  menuDrawer.classList.remove('on');
-  overlay.classList.remove('on');
-};
+function closeMenuDrawer() {
+  removeClassList(menuDrawer, 'on');
+  closeOverlay();
+}
 
 menuButton.addEventListener('click', openMenuDrawer);
 overlay.addEventListener('click', closeMenuDrawer);

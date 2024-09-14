@@ -4,24 +4,17 @@ const popularSearchTermsButton = document.querySelector(
 const popularSearchTermsPopup = document.querySelector(
   '.popular-search-terms-popup'
 );
-
 const popularSearchTermsPopupCloseButton = document.querySelector(
   '.popular-search-terms-popup__close-button'
 );
 
-popularSearchTermsButton.addEventListener('click', openPopularSearchTermsBox);
-popularSearchTermsPopupCloseButton.addEventListener(
-  'click',
-  closePopularSearchTermsBox
-);
-
 function openPopularSearchTermsBox() {
-  popularSearchTermsPopup.classList.add('on');
+  addClassList(popularSearchTermsPopup, 'on');
   window.addEventListener('click', clickOutSidePopularSearchTermsBox);
 }
 
 function closePopularSearchTermsBox() {
-  popularSearchTermsPopup.classList.remove('on');
+  removeClassList(popularSearchTermsPopup, 'on');
 }
 
 function clickOutSidePopularSearchTermsBox(e) {
@@ -30,3 +23,9 @@ function clickOutSidePopularSearchTermsBox(e) {
     window.removeEventListener('click', clickOutSidePopularSearchTermsBox);
   }
 }
+
+popularSearchTermsButton.addEventListener('click', openPopularSearchTermsBox);
+popularSearchTermsPopupCloseButton.addEventListener(
+  'click',
+  closePopularSearchTermsBox
+);

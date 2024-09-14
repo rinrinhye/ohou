@@ -1,24 +1,11 @@
 const todayDealProductSlide = new Swiper('.today-deal-product-slide__wrapper', {
   on: {
-    progress: function (s, progress) {
-      const slide = document.querySelector('.today-deal-product-slide');
-      const prevButton = slide.querySelector('.slide-prev');
-      const nextButton = slide.querySelector('.slide-next');
-
-      if (progress === 0) {
-        prevButton.style.display = 'none';
-        nextButton.style.display = 'block';
-      }
-
-      if (progress > 0) {
-        prevButton.style.display = 'block';
-        nextButton.style.display = 'block';
-      }
-
-      if (progress === 1) {
-        nextButton.style.display = 'none';
-      }
-    },
+    progress: (swiper, progress) =>
+      showAndHideSlideArrowButtons(
+        swiper,
+        progress,
+        '.today-deal-product-slide'
+      ),
   },
   breakpoints: {
     769: {

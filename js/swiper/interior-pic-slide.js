@@ -6,24 +6,8 @@ const interiorPicSlide = new Swiper('.interior-pic-slide__wrapper', {
     prevEl: '.interior-pic-slide .slide-prev',
   },
   on: {
-    progress: function (s, progress) {
-      const slide = document.querySelector('.interior-pic-slide');
-      const prevButton = slide.querySelector('.slide-prev');
-      const nextButton = slide.querySelector('.slide-next');
-
-      if (progress === 0) {
-        prevButton.style.display = 'none';
-        nextButton.style.display = 'block';
-      }
-      if (progress > 0) {
-        prevButton.style.display = 'block';
-        nextButton.style.display = 'block';
-      }
-
-      if (progress === 1) {
-        nextButton.style.display = 'none';
-      }
-    },
+    progress: (swiper, progress) =>
+      showAndHideSlideArrowButtons(swiper, progress, '.interior-pic-slide'),
   },
   breakpoints: {
     769: {

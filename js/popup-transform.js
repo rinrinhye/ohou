@@ -1,41 +1,18 @@
-window.addEventListener('resize', () => {
-  const currentInnerWidth = window.innerWidth;
+function popupTransform() {
   const maxXLWidth = 1280;
 
-  if (currentInnerWidth < 1280) {
-    popularSearchTermsPopup.style.transform = `translateX(0)`;
-    lnbMenuPopup.style.transform = `translateX(0)`;
-    writeListPopup.style.transform = `translateX(0)`;
-  } else if (currentInnerWidth >= 1280) {
-    popularSearchTermsPopup.style.transform = `translateX(-${
-      (currentInnerWidth - maxXLWidth) / 2
-    }px)`;
-    lnbMenuPopup.style.transform = `translateX(-${
-      (currentInnerWidth - maxXLWidth) / 2
-    }px)`;
-    writeListPopup.style.transform = `translateX(-${
-      (currentInnerWidth - maxXLWidth) / 2
-    }px)`;
-  }
-});
+  if (!isResponsiveXL()) {
+    applyCssTranslateX(popularSearchTermsPopup, 0);
+    applyCssTranslateX(lnbMenuPopup, 0);
+    applyCssTranslateX(writeListPopup, 0);
+  } else if (isResponsiveXL()) {
+    const value = (currentInnerWidth - maxXLWidth) / 2;
 
-window.addEventListener('load', () => {
-  const currentInnerWidth = window.innerWidth;
-  const maxXLWidth = 1280;
-
-  if (currentInnerWidth < 1280) {
-    popularSearchTermsPopup.style.transform = `translateX(0)`;
-    lnbMenuPopup.style.transform = `translateX(0)`;
-    writeListPopup.style.transform = `translateX(0)`;
-  } else if (currentInnerWidth >= 1280) {
-    popularSearchTermsPopup.style.transform = `translateX(-${
-      (currentInnerWidth - maxXLWidth) / 2
-    }px)`;
-    lnbMenuPopup.style.transform = `translateX(-${
-      (currentInnerWidth - maxXLWidth) / 2
-    }px)`;
-    writeListPopup.style.transform = `translateX(-${
-      (currentInnerWidth - maxXLWidth) / 2
-    }px)`;
+    applyCssTranslateX(popularSearchTermsPopup, value);
+    applyCssTranslateX(lnbMenuPopup, value);
+    applyCssTranslateX(writeListPopup, value);
   }
-});
+}
+
+window.addEventListener('load', popupTransform);
+window.addEventListener('resize', popupTransform);

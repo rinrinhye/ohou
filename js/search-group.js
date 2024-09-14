@@ -3,13 +3,9 @@ const searchHistoryGroup = document.querySelector(
   '.header__search-history-group'
 );
 
-searchInput.addEventListener('focus', openSearchHistoryGroup);
-searchInput.addEventListener('blur', closeSearchHistoryGroup);
-
-function openSearchHistoryGroup() {
-  searchHistoryGroup.classList.add('on');
-}
-
-function closeSearchHistoryGroup() {
-  searchHistoryGroup.classList.remove('on');
-}
+searchInput.addEventListener('focus', () =>
+  addClassList(searchHistoryGroup, 'on')
+);
+searchInput.addEventListener('blur', () =>
+  removeClassList(searchHistoryGroup, 'on')
+);
