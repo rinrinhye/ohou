@@ -41,7 +41,7 @@ function toggleHeaderVisibilityOnScroll() {
 }
 
 function toggleHeaderVisibilityOnResize() {
-  if (currentInnerWidth > 768 && header.classList.contains('hidden')) {
+  if (!isResponsiveSM() && header.classList.contains('hidden')) {
     showHeader();
   }
 

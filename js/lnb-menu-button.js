@@ -47,7 +47,7 @@ function clickOutSideMobileTabMenu(e) {
 }
 
 function clickLnbMenuButton() {
-  if (currentInnerWidth <= 768) {
+  if (isResponsiveSM()) {
     openMobileTabMenu();
   } else {
     toggleLnbMenuPopup();
