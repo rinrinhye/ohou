@@ -9,4 +9,9 @@
     height: 100%;
     transition: transform 0.2s;
   }
+
+  .scrap-button {
+    z-index: $scrap-button-level;
+    cursor: pointer;
+  }
 }

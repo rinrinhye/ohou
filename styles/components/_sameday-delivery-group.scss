@@ -1,0 +1,15 @@
+.sameday-delivery-group {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  margin-top: 4px;
+  gap: 4px;
+
+  .same-day-delivery__img {
+    height: 15px;
+  }
+
+  .same-day-delivery__text {
+    @include text-style(12, $blue);
+  }
+}

@@ -1,0 +1,9 @@
+.author-group {
+  z-index: $author-group-level;
+
+  .author-group__wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+  }
+}

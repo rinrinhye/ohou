@@ -1,0 +1,32 @@
+%badge {
+  @include text-style(11);
+  display: inline-block;
+  padding: 0 4px;
+  font-weight: 700;
+  line-height: 20px;
+  border-radius: 4px;
+}
+
+.badge__free-shipping {
+  @extend %badge;
+  color: $font-gray-3;
+  background: $background-4;
+}
+
+.badge__special-deal,
+.badge__time {
+  @extend %badge;
+  color: $white;
+  background: $ohou-red;
+}
+
+.badge__payment-discount {
+  @extend %badge;
+  margin-top: 6px;
+  border: 1px solid $border;
+
+  img {
+    width: 10px;
+    height: 10px;
+  }
+}

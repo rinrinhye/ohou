@@ -1,0 +1,46 @@
+.quick-menu {
+  &__menu-list {
+    display: grid;
+    place-items: center;
+    grid-template-columns: repeat(5, 1fr);
+  }
+
+  &__menu-item {
+    max-width: 78px;
+
+    a {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      justify-content: center;
+      gap: 6px;
+    }
+
+    img {
+      flex-shrink: 1;
+      width: 100%;
+    }
+
+    span {
+      @include text-style(12);
+    }
+  }
+
+  @include responsive(M) {
+    &__menu-list {
+      grid-template-columns: repeat(10, 1fr);
+    }
+  }
+
+  @include responsive(L) {
+    &__menu-item {
+      a {
+        gap: 8px;
+      }
+
+      span {
+        @include text-style(16);
+      }
+    }
+  }
+}

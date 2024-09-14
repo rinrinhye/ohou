@@ -1,16 +1,31 @@
 .header {
-  &-top {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: $header-level;
+  width: 100%;
+
+  transform: translateY(0);
+  transition: transform 0.1s;
+
+  &.hidden {
+    transform: translateY(-100%);
+  }
+
+  &__top {
     height: 50px;
+    background: $white;
     border-bottom: 1px solid $border;
   }
 
-  &-bottom {
+  &__bottom {
     height: 40px;
+    background: $white;
     border-bottom: 1px solid $border;
   }
 
-  &-top__container,
-  &-bottom__container {
+  &__top-container,
+  &__bottom-container {
     position: relative;
     display: flex;
     align-items: center;
@@ -20,13 +35,14 @@
     padding: 0 $sm-margin;
   }
 
-  &-bottom__wrap--left {
+  &__bottom-left {
     width: 100%;
   }
 
   &__menu-button {
     width: 36px;
     height: 36px;
+    cursor: pointer;
     background: url('assets/ico_menu.svg') no-repeat;
     background-size: contain;
   }
@@ -85,34 +101,44 @@
   }
 
   @include responsive(M) {
-    position: sticky;
-    top: 0;
+    transform: translateY(0);
 
-    &-top {
+    &__top {
+      position: relative;
+      z-index: $header-top-level;
       height: 80px;
     }
 
-    &-bottom {
+    &__bottom {
+      position: fixed;
+      top: 80px;
+      width: 100%;
       height: 50px;
+      transition: transform 0.2s;
+
+      &.hidden {
+        transform: translateY(-50px);
+      }
     }
 
-    &-top__container,
-    &-bottom__container {
+    &__top-container,
+    &__bottom-container {
       padding: 0 $md-margin;
+      background: $white;
     }
 
-    &-top__wrap--left,
-    &-top__wrap--right {
+    &__top-left,
+    &__top-right {
       display: flex;
       align-items: center;
     }
 
-    &-bottom__wrap--left {
+    &__bottom-left {
       flex: 1 1 50%;
       width: 50%;
     }
 
-    &-bottom__wrap--right {
+    &__bottom-right {
       flex: 0 0 192px;
     }
 
@@ -181,46 +207,9 @@
   }
 
   @include responsive(L) {
-    &-top__container,
-    &-bottom__container {
+    &__top-container,
+    &__bottom-container {
       padding: 0 $lg-margin;
-    }
-
-    .search-group {
-      position: relative;
-      margin-right: 20px;
-
-      &::after {
-        position: absolute;
-        top: 6px;
-        left: 7px;
-        display: block;
-        width: 28px;
-        height: 28px;
-        background: url('assets/ico_search_gray.svg') no-repeat;
-        background-size: contain;
-        content: '';
-      }
-    }
-
-    .search-group__input {
-      width: 196px;
-      height: 40px;
-      padding: 0 14px 0 40px;
-      border: 1px solid $border;
-      border-radius: 4px;
-
-      &::placeholder {
-        color: #bdbdbd;
-      }
-
-      &:hover {
-        background: $background-1;
-      }
-
-      &:focus {
-        outline: 1px solid $blue;
-      }
     }
 
     .header__write-button {
@@ -243,14 +232,10 @@
   }
 
   @include responsive(XL) {
-    &-top__container,
-    &-bottom__container {
+    &__top-container,
+    &__bottom-container {
       max-width: $xl-max-width;
       margin: 0 auto;
-    }
-
-    .search-group__input {
-      width: 296px;
     }
   }
 }

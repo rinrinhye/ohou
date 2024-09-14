@@ -1,0 +1,69 @@
+.section--today-deal {
+  .today-deal-product-list {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .today-deal-product-item {
+    padding: 20px 0;
+
+    &:first-child {
+      padding-top: 0;
+    }
+
+    &:last-child {
+      padding-bottom: 0;
+    }
+
+    &:not(:last-child) {
+      border-bottom: 1px solid $border;
+    }
+  }
+
+  .product {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    .photo-card,
+    .product__info {
+      flex: 0 0 calc(50% - 6px);
+    }
+
+    .photo-card {
+      align-self: flex-start;
+    }
+
+    .product__review-group {
+      margin-top: 6px;
+    }
+
+    .product__price-group {
+      margin-top: 2px;
+    }
+
+    .product__price-number-group {
+      margin-top: 3px;
+    }
+
+    .product__badge-group {
+      margin-top: 6px;
+    }
+  }
+
+  @include responsive(M) {
+    .today-deal-product-slide {
+      position: relative;
+    }
+
+    .today-deal-product-slide__wrapper {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .product {
+      align-items: flex-start;
+      flex-direction: column;
+    }
+  }
+}

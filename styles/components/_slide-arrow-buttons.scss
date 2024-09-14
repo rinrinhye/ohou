@@ -1,0 +1,42 @@
+.slide-next,
+.slide-prev {
+  position: absolute;
+  top: 50%;
+  z-index: $slide-arrow-button-level;
+  width: 48px;
+  height: 48px;
+  cursor: pointer;
+  background: $white;
+  border-radius: 50%;
+  transform: translateY(-50%);
+  box-shadow: $box-shadow;
+
+  &::after {
+    position: absolute;
+    top: 50%;
+    display: block;
+    width: 12px;
+    height: 12px;
+    border-top: 2px solid $font-gray-1;
+    border-right: 2px solid $font-gray-1;
+    content: '';
+  }
+}
+
+.slide-next {
+  right: -24px;
+
+  &::after {
+    left: 30%;
+    transform: translateY(-50%) rotate(45deg);
+  }
+}
+
+.slide-prev {
+  left: -24px;
+
+  &::after {
+    left: 38%;
+    transform: translateY(-50%) rotate(-135deg);
+  }
+}

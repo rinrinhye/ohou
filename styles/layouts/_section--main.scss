@@ -1,0 +1,47 @@
+.section--main {
+  &__top {
+    margin-bottom: 16px;
+  }
+
+  @include responsive(M) {
+    &__container {
+      padding: 30px $md-margin 40px;
+    }
+
+    &__top {
+      display: flex;
+      margin-bottom: 30px;
+      gap: 16px;
+    }
+
+    &__top-left {
+      flex: 1 1 calc(75%);
+      height: 100%;
+      min-width: 0;
+    }
+
+    &__top-right {
+      flex: 1 1 calc(25%);
+      height: 100%;
+      min-width: 0;
+    }
+  }
+
+  @include responsive(L) {
+    &__container {
+      padding: 30px $lg-margin 40px;
+    }
+
+    &__top {
+      gap: 20px;
+    }
+  }
+
+  @include responsive(L) {
+    &__container {
+      max-width: $xl-max-width;
+      margin: 0 auto;
+      border: 0;
+    }
+  }
+}

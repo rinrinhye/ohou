@@ -1,0 +1,42 @@
+.popular-search-terms {
+  .popular-search-terms__list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    .popular-search-terms__item {
+      &:hover,
+      :active {
+        background: $background-1;
+      }
+    }
+
+    .popular-search-terms__item-wrap {
+      display: flex;
+      padding: 2px 0;
+      margin: 8px 12px;
+      white-space: nowrap;
+    }
+  }
+}
+
+.popular-search-terms--modal {
+  .popular-search-terms__list {
+    grid-template-columns: 1fr;
+  }
+
+  .popular-search-terms__item {
+    width: 268px;
+  }
+}
+
+.rank {
+  @include text-style(16);
+  flex-basis: 20px;
+  flex-shrink: 0;
+  font-weight: 700;
+  text-align: center;
+}
+
+.search-keyword {
+  @include text-style(16);
+}

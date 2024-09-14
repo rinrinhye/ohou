@@ -1,0 +1,55 @@
+.up,
+.down,
+.new {
+  width: 24px;
+}
+
+.up,
+.new,
+.down {
+  flex-basis: 24px;
+  flex-shrink: 0;
+  margin-right: 8px;
+  text-align: center;
+
+  &::after {
+    display: block;
+  }
+}
+
+.up,
+.down {
+  position: relative;
+
+  &::after {
+    position: absolute;
+    left: 4px;
+    width: 0;
+    height: 0;
+    content: '';
+    transform: translateX(50%);
+  }
+}
+
+.up::after {
+  top: 3px;
+  border: 5px solid $red;
+  border-top: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-left: 5px solid transparent;
+}
+
+.down::after {
+  top: 7px;
+  border: 5px solid $blue;
+  border-right: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+  border-left: 5px solid transparent;
+}
+
+.new::after {
+  @include text-style(10, $red);
+  font-weight: 500;
+  text-align: center;
+  content: 'new';
+}

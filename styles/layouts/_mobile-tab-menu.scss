@@ -1,0 +1,89 @@
+.mobile-tab-menu {
+  position: fixed;
+  bottom: 0;
+  padding-top: 6px;
+  padding-bottom: 9px;
+  background: $white;
+  border-top-right-radius: 8px;
+  border-top-left-radius: 8px;
+  opacity: 0;
+  transform: translateY(100%);
+  transition: transform 0.2s, opacity 0.2s;
+
+  &.on {
+    z-index: $mobile-tab-menu-level;
+    opacity: 1;
+    transform: translateY(0);
+    transition: transform 0s;
+  }
+
+  &::before {
+    position: absolute;
+    left: 50%;
+    display: block;
+    width: 32px;
+    height: 4px;
+    background: $background-2;
+    border-radius: 2px;
+    content: '';
+    transform: translateX(-50%);
+  }
+
+  &__title {
+    @include text-style(20);
+    padding: 16px 10px;
+    margin-bottom: 15px;
+    font-weight: 700;
+    text-align: center;
+  }
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &__item {
+    flex: 1 1 50%;
+    height: 44px;
+
+    &:hover,
+    &:active {
+      a {
+        color: $ohou-blue;
+      }
+    }
+
+    a {
+      @include text-style(15);
+      display: block;
+      width: 100%;
+      height: 100%;
+      padding: 10px 0 10px 26px;
+      font-weight: 700;
+    }
+  }
+
+  &__close-button {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    cursor: pointer;
+  }
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: $overlay-level;
+  display: none;
+  width: 100%;
+  height: 100%;
+  background: $overlay;
+
+  &.on {
+    display: block;
+  }
+}

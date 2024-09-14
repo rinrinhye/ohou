@@ -1,0 +1,40 @@
+.lnb-menu-popup {
+  position: absolute;
+  top: 140px;
+  right: 100px;
+  z-index: -1;
+  display: flex;
+  flex-direction: column;
+  padding: 8px;
+  background: $white;
+  border: 1px solid $border;
+  border-radius: 6px;
+  opacity: 0;
+  transform: translateY(-5%);
+  box-shadow: $box-shadow;
+  transition: transform 0.2s, opacity 0.2s;
+
+  &.on {
+    z-index: $lnb-menu-popup-level;
+    opacity: 1;
+    transform: translateY(0);
+    transition: transform 0.2s, opacity 0s;
+  }
+
+  &__list {
+    padding: 20px 22px 0;
+  }
+
+  &__item {
+    @include text-style(16);
+    display: block;
+    width: 250px;
+    padding-bottom: 20px;
+    font-weight: 700;
+
+    &:hover,
+    &:active {
+      color: $ohou-blue;
+    }
+  }
+}

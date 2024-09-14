@@ -1,0 +1,61 @@
+.section--interior-pic {
+  overflow: hidden;
+
+  &__content {
+    width: calc(100% + 80px);
+    margin: 0 (-$sm-margin);
+  }
+
+  .interior-pic-slide {
+    position: relative;
+  }
+
+  .interior-pic-slide__list {
+    padding-left: 16px;
+    scroll-snap-type: x mandatory;
+  }
+
+  .interior-pic-slide__item {
+    position: relative;
+
+    &:hover {
+      .photo-card__image {
+        transform: scale(1.05);
+      }
+    }
+  }
+
+  .interior-pic-slide__author-group {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 8px;
+  }
+
+  .interior-pic-slide__avatar {
+    width: 24px;
+    height: 24px;
+    margin-right: 4px;
+  }
+
+  .interior-pic-slide__author {
+    @include text-style(12, $white);
+    font-weight: 700;
+  }
+
+  .scrap-button {
+    right: 8px;
+    bottom: 8px;
+  }
+
+  @include responsive(M) {
+    &__content {
+      width: 100%;
+      margin: 0;
+    }
+
+    .interior-pic-slide__list {
+      padding-left: 0;
+    }
+  }
+}

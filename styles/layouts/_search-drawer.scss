@@ -1,0 +1,150 @@
+.search-drawer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 26px 16px 0;
+  background: $white;
+  opacity: 0;
+  transform: translateX(100%);
+  transition: transform 0.2s, opacity 0.2s;
+
+  &.on {
+    z-index: $search-drawer-level;
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  &__search-bar {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  }
+
+  &__input-group {
+    position: relative;
+    flex-grow: 1;
+  }
+
+  &__search-icon {
+    position: absolute;
+    top: 6px;
+    left: 12px;
+    width: 28px;
+    height: 28px;
+  }
+
+  &__input {
+    @include text-style(16);
+    width: 100%;
+    height: 40px;
+    padding: 0 14px 0 44px;
+    line-height: 40px;
+    border: 1px solid $border;
+    border-radius: 4px;
+    outline: none;
+
+    &:focus {
+      border-color: $ohou-blue;
+    }
+
+    &:hover {
+      background: $background-1;
+    }
+  }
+
+  &__input-delete-button {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    display: none;
+    width: 20px;
+    height: 20px;
+    color: $white;
+    cursor: pointer;
+    background: $font-gray-2;
+    border-radius: 50%;
+
+    img {
+      width: 14px;
+      height: 14px;
+      margin-top: 2px;
+    }
+
+    &.on {
+      display: block;
+    }
+  }
+
+  &__close-button {
+    @include text-style(15);
+    padding: 11px 5px;
+    font-weight: 700;
+    cursor: pointer;
+  }
+
+  &__recent-searches {
+    display: flex;
+    flex-direction: column;
+    padding: 8px 0;
+  }
+
+  &__recent-searches__text-group {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 7px 8px 10px;
+  }
+
+  &__recent-searches__title {
+    @include text-style(13, $font-gray-2);
+  }
+
+  &__recent-searches__all-delete-button {
+    @include text-style(12, $font-gray-2);
+    cursor: pointer;
+  }
+
+  &__recent-searches__item {
+    padding: 14px 16px;
+
+    &:hover {
+      background: $background-1;
+    }
+  }
+
+  &__recent-searches__item-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+  }
+
+  &__recent-searches__keyword {
+    @include text-style(16);
+  }
+
+  &__recent-searches__keyword-delete-button {
+    cursor: pointer;
+
+    &:hover {
+      opacity: 0.6;
+    }
+  }
+
+  @include responsive(M) {
+    left: auto;
+    max-width: 326px;
+    min-width: 256px;
+    padding: 30px;
+
+    &__recent-searches {
+      margin-top: 4px;
+      border: 1px solid $border;
+      border-radius: 4px;
+      box-shadow: $box-shadow;
+    }
+  }
+}

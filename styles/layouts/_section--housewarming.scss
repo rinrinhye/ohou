@@ -1,0 +1,43 @@
+.section--housewarming {
+  .housewarming-post__list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+  .housewarming-post__item {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    gap: 10px;
+
+    &:hover {
+      .photo-card__image {
+        transform: scale(1.05);
+      }
+    }
+  }
+
+  .housewarming-post__title {
+    @include line-clamp(2);
+    @include text-style(16);
+    word-break: keep-all;
+
+    .highlight {
+      font-weight: 700;
+    }
+  }
+
+  .scrap-button {
+    right: 10px;
+    bottom: 10px;
+  }
+
+  @include responsive(M) {
+    .housewarming-post__list {
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+  }
+}
