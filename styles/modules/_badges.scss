@@ -7,7 +7,7 @@
   border-radius: 4px;
 }
 
-.badg--free-shipping {
+.badge--free-shipping {
   @extend %badge;
   color: $font-gray-3;
   background: $background-4;

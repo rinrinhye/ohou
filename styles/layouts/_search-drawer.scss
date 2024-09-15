@@ -79,6 +79,7 @@
 
   &__close-button {
     @include text-style(15);
+    flex-shrink: 0;
     padding: 11px 5px;
     font-weight: 700;
     cursor: pointer;
