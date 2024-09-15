@@ -26,11 +26,8 @@ function clickOverlay(e) {
   }
 }
 
-function toggleInputDeleteButtonOnInput(e) {
-  if (
-    e.target.value.length >= 1 &&
-    !searchDrawerInputDeleteButton.classList.contains('on')
-  ) {
+function toggleSearchDrawerInputDeleteButton(e) {
+  if (e.target.value.length >= 1) {
     addClassList(searchDrawerInputDeleteButton, 'on');
   }
 
@@ -39,7 +36,14 @@ function toggleInputDeleteButtonOnInput(e) {
   }
 }
 
+function resetsearchDrawerInput() {
+  resetInputValue(searchDrawerInput);
+  removeClassList(searchDrawerInputDeleteButton, 'on');
+}
+
 searchButton.addEventListener('click', openSearchDrawer);
 searchDrawerCloseButton.addEventListener('click', closeSearchDrawer);
 
-searchDrawer.addEventListener('input', toggleInputDeleteButtonOnInput);
+searchDrawer.addEventListener('input', toggleSearchDrawerInputDeleteButton);
+
+searchDrawerInputDeleteButton.addEventListener('click', resetsearchDrawerInput);

@@ -1,6 +1,6 @@
 .lnb-menu-popup {
-  position: absolute;
-  top: 140px;
+  position: fixed;
+  top: 120px;
   right: 100px;
   z-index: -1;
   display: flex;
@@ -12,13 +12,12 @@
   opacity: 0;
   transform: translateY(-5%);
   box-shadow: $box-shadow;
-  transition: transform 0.2s, opacity 0.2s;
+  transition: top 0.2s, opacity 0.2s, z-index 0.2s;
 
   &.on {
+    top: 140px;
     z-index: $lnb-menu-popup-level;
     opacity: 1;
-    transform: translateY(0);
-    transition: transform 0.2s, opacity 0s;
   }
 
   &__list {

@@ -1,5 +1,4 @@
 const lnbMenuButton = document.querySelector('.header__lnb-menu-button');
-const lnbMenuPopup = document.querySelector('.lnb-menu-popup');
 const mobileTabMenu = document.querySelector('.mobile-tab-menu');
 const mobileTabMenuCloseButton = document.querySelector(
   '.mobile-tab-menu__close-button'

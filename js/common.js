@@ -1,4 +1,5 @@
 const overlay = document.querySelector('.overlay');
+const lnbMenuPopup = document.querySelector('.lnb-menu-popup');
 let currentInnerWidth = window.innerWidth;
 let currentScrollY = window.scrollY;
 
@@ -9,12 +10,24 @@ function removeClassList(target, className) {
   target.classList.remove(className);
 }
 
+function toggleClassList(target, className) {
+  target.classList.toggle(className);
+}
+
 function openOverlay() {
   overlay.classList.add('on');
 }
 
 function closeOverlay() {
   overlay.classList.remove('on');
+}
+
+function resetInputValue(input) {
+  input.value = '';
+}
+
+function resetScrollTop(target) {
+  target.resetScrollTop = 0;
 }
 
 function updateInnerWidth() {

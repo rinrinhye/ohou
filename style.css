@@ -1493,7 +1493,7 @@ button {
   height: 1px;
   margin: 20px 0;
   background: #eaedef;
-  border: none;
+  border: 0;
 }
 .menu-drawer__header {
   display: flex;
@@ -1563,12 +1563,12 @@ button {
   grid-template-rows: 1fr;
 }
 .menu-drawer__gnb-button {
-  display: flex;
   font-size: 16px;
   line-height: 20px;
   letter-spacing: -0.3px;
-  align-items: center;
   position: relative;
+  display: flex;
+  align-items: center;
   width: 100%;
   height: 40px;
   font-weight: 700;
@@ -1842,7 +1842,7 @@ button {
 .header__search-group__input {
   width: 196px;
   height: 40px;
-  padding: 0 14px 0 40px;
+  padding: 0 40px;
   border: 1px solid #eaedef;
   border-radius: 4px;
 }
@@ -1855,10 +1855,31 @@ button {
 .header__search-group__input:focus {
   outline: 1px solid #35c5f0;
 }
+.header__search-group__input-delete-button {
+  position: absolute;
+  top: 10px;
+  right: 16px;
+  display: none;
+  width: 20px;
+  height: 20px;
+  color: #fff;
+  cursor: pointer;
+  background: #828c94;
+  border-radius: 50%;
+}
+.header__search-group__input-delete-button img {
+  width: 14px;
+  height: 14px;
+  margin-top: 2px;
+}
+.header__search-group__input-delete-button.on {
+  display: block;
+}
 .header__search-group .header__search-history-group {
   position: absolute;
   top: calc(100% + 4px);
   left: 0;
+  z-index: 10;
   display: none;
   width: 100%;
   padding: 10px 0;
@@ -1866,10 +1887,8 @@ button {
   border: 1px solid #eaedef;
   border-radius: 4px;
   box-shadow: rgba(63, 71, 77, 0.2) 0 4px 10px 0;
-  z-index: 10;
 }
 .header__search-group .header__search-history-group.on {
-  z-index: 10;
   display: block;
 }
 .header__search-group .header__search-history-group__header {
@@ -2066,7 +2085,7 @@ button {
 .banner-slide .slide-prev {
   z-index: -1;
   opacity: 0;
-  transition: opacity 0.2s;
+  transition: opacity 0.2s, z-index 0.2s;
 }
 .banner-slide__wrapper {
   width: 100%;
@@ -2154,8 +2173,8 @@ button {
 }
 
 .lnb-menu-popup {
-  position: absolute;
-  top: 140px;
+  position: fixed;
+  top: 120px;
   right: 100px;
   z-index: -1;
   display: flex;
@@ -2167,13 +2186,12 @@ button {
   opacity: 0;
   transform: translateY(-5%);
   box-shadow: rgba(63, 71, 77, 0.2) 0 4px 10px 0;
-  transition: transform 0.2s, opacity 0.2s;
+  transition: top 0.2s, opacity 0.2s, z-index 0.2s;
 }
 .lnb-menu-popup.on {
+  top: 140px;
   z-index: 10;
   opacity: 1;
-  transform: translateY(0);
-  transition: transform 0.2s, opacity 0s;
 }
 .lnb-menu-popup__list {
   padding: 20px 22px 0;

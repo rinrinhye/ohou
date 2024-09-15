@@ -29,7 +29,7 @@ function toggleHeaderVisibilityOnScroll() {
     }
   }
 
-  if (isResponsiveSM()) {
+  if (!isResponsiveSM()) {
     if (newScrollY > currentScrollY) {
       hideHeaderBottom();
     } else {
@@ -41,14 +41,14 @@ function toggleHeaderVisibilityOnScroll() {
 }
 
 function toggleHeaderVisibilityOnResize() {
-  if (!isResponsiveSM() && header.classList.contains('hidden')) {
-    showHeader();
-  }
-
   if (isResponsiveSM()) {
     if (headerBottom.classList.contains('hidden')) {
       hideHeaderBottom();
     }
+  }
+
+  if (!isResponsiveSM() && header.classList.contains('hidden')) {
+    showHeader();
   }
 }
 
@@ -59,7 +59,11 @@ function showHeaderBottomOnMouseenter() {
 }
 
 function hideHeaderBottomOnMouseleave() {
-  if (!isResponsiveSM() && window.scrollY !== 0) {
+  if (
+    !isResponsiveSM() &&
+    window.scrollY !== 0 &&
+    !lnbMenuPopup.classList.contains('on')
+  ) {
     hideHeaderBottom();
   }
 }
