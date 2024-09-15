@@ -997,6 +997,7 @@ button {
 
 .section--best-product .product-category-control-slide {
   position: relative;
+  margin-right: -16px;
   margin-bottom: 16px;
 }
 .section--best-product .product-category-control-slide__list {
@@ -1059,6 +1060,11 @@ button {
 }
 .section--best-product .best-product__item .product .product__badge-group {
   margin-top: 8px;
+}
+@media screen and (width >= 768px) {
+  .section--best-product .product-category-control-slide {
+    margin-right: 0;
+  }
 }
 
 .footer {

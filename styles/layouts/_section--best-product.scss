@@ -1,6 +1,7 @@
 .section--best-product {
   .product-category-control-slide {
     position: relative;
+    margin-right: -$sm-margin;
     margin-bottom: 16px;
   }
 
@@ -79,6 +80,12 @@
       .product__badge-group {
         margin-top: 8px;
       }
+    }
+  }
+
+  @include responsive(M) {
+    .product-category-control-slide {
+      margin-right: 0;
     }
   }
 }
