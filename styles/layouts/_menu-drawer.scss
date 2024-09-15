@@ -2,6 +2,7 @@
   position: fixed;
   top: 0;
   left: 0;
+  z-index: $menu-drawer-level;
   width: 270px;
   height: 100%;
   padding: 26px 16px;
@@ -11,7 +12,6 @@
   transition: transform 0.2s;
 
   &.on {
-    z-index: $menu-drawer-level;
     transform: translateX(0);
   }
 

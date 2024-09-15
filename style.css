@@ -1480,6 +1480,7 @@ button {
   position: fixed;
   top: 0;
   left: 0;
+  z-index: 6000;
   width: 270px;
   height: 100%;
   padding: 26px 16px;
@@ -1489,7 +1490,6 @@ button {
   transition: transform 0.2s;
 }
 .menu-drawer.on {
-  z-index: 6000;
   transform: translateX(0);
 }
 .menu-drawer__hr {
