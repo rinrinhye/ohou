@@ -1030,6 +1030,7 @@ button {
 }
 .section--best-product .best-product__item {
   flex: 1 1 calc(33.3% - 4px);
+  min-width: 0;
 }
 .section--best-product .best-product__item:hover .photo-card__image {
   transform: scale(1.05);
