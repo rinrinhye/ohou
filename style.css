@@ -2595,8 +2595,10 @@ button {
   display: grid;
   grid-template-columns: 1fr 1fr;
 }
-.popular-search-terms .popular-search-terms__list .popular-search-terms__item:hover,
-.popular-search-terms .popular-search-terms__list .popular-search-terms__item :active {
+.popular-search-terms .popular-search-terms__list .popular-search-terms__item {
+  min-width: 0;
+}
+.popular-search-terms .popular-search-terms__list .popular-search-terms__item:hover, .popular-search-terms .popular-search-terms__list .popular-search-terms__item:active {
   background: #f7f9fa;
 }
 .popular-search-terms .popular-search-terms__list .popular-search-terms__item-wrap {
@@ -2627,4 +2629,8 @@ button {
   font-size: 16px;
   line-height: 20px;
   letter-spacing: -0.3px;
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }/*# sourceMappingURL=style.css.map */

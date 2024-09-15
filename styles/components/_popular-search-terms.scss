@@ -4,8 +4,10 @@
     grid-template-columns: 1fr 1fr;
 
     .popular-search-terms__item {
+      min-width: 0;
+
       &:hover,
-      :active {
+      &:active {
         background: $background-1;
       }
     }
@@ -39,4 +41,8 @@
 
 .search-keyword {
   @include text-style(16);
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
