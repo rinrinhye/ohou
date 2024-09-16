@@ -14,13 +14,13 @@
       bottom: 1px;
       display: block;
       width: 100px;
+      cursor: pointer;
       background: linear-gradient(
         to right,
         #ffffff00 0%,
         rgb(255, 255, 255, 50) 50%
       );
       content: '';
-      cursor: pointer;
     }
   }
 

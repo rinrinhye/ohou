@@ -6,8 +6,7 @@
     .popular-search-terms__item {
       min-width: 0;
 
-      &:hover,
-      &:active {
+      &:hover {
         background: $background-1;
       }
     }

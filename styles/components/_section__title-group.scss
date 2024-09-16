@@ -57,9 +57,10 @@
       }
     }
   }
+}
 
-  @include responsive(L) {
-  }
-  @include responsive(XL) {
+.section__title-group--not-hover {
+  .section__title:hover {
+    opacity: 1;
   }
 }

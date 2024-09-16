@@ -7,8 +7,7 @@
   cursor: pointer;
   gap: 4px;
 
-  &:hover,
-  &:active {
+  &:hover {
     .content-view-more__arrow-icon {
       background: $background-3;
     }
