@@ -134,8 +134,10 @@
       transform: rotate(135deg);
     }
 
-    &:hover {
-      background: $background-1;
+    @include mobile-not-hover {
+      &:hover {
+        background: $background-1;
+      }
     }
   }
 
