@@ -13,25 +13,26 @@
     width: fit-content;
     white-space: nowrap;
 
-    a {
+    button {
       @include text-style(14);
       display: inline-block;
       height: 32px;
       padding: 0 12px;
       line-height: 32px;
+      cursor: pointer;
       background: $background-1;
       border-radius: 16px;
     }
 
     &.on {
-      a {
+      button {
         color: $white;
         background: $ohou-blue;
       }
     }
 
     &:hover:not(.on) {
-      a {
+      button {
         background: $background-2;
       }
     }

@@ -1007,7 +1007,7 @@ button {
   width: fit-content;
   white-space: nowrap;
 }
-.section--best-product .product-category-control-slide__item a {
+.section--best-product .product-category-control-slide__item button {
   font-size: 14px;
   line-height: 18px;
   letter-spacing: -0.3px;
@@ -1015,14 +1015,15 @@ button {
   height: 32px;
   padding: 0 12px;
   line-height: 32px;
+  cursor: pointer;
   background: #f7f9fa;
   border-radius: 16px;
 }
-.section--best-product .product-category-control-slide__item.on a {
+.section--best-product .product-category-control-slide__item.on button {
   color: #fff;
   background: #35c5f0;
 }
-.section--best-product .product-category-control-slide__item:hover:not(.on) a {
+.section--best-product .product-category-control-slide__item:hover:not(.on) button {
   background: #eaedef;
 }
 .section--best-product .best-product__list {
