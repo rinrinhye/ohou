@@ -708,12 +708,9 @@ button:focus-visible {
   bottom: 8px;
 }
 @media screen and (width >= 768px) {
-  .section--interior-pic__content {
-    width: 100%;
-    margin: 0;
-  }
-  .section--interior-pic .interior-pic-slide__list {
+  .section--interior-pic .interior-pic-slide__wrapper {
     padding-left: 0;
+    margin: 0;
   }
 }
 
