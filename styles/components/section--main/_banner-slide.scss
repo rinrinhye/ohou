@@ -68,7 +68,9 @@
   }
 
   @include responsive(M) {
-    &__list {
+    overflow: visible;
+
+    &__wrapper {
       border-radius: 4px;
     }
 

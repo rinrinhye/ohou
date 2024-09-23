@@ -2141,7 +2141,10 @@ button:focus-visible {
   transition: transform 0.2s;
 }
 @media screen and (width >= 768px) {
-  .banner-slide__list {
+  .banner-slide {
+    overflow: visible;
+  }
+  .banner-slide__wrapper {
     border-radius: 4px;
   }
   .banner-slide__slide-number-group {
