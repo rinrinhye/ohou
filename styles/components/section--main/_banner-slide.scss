@@ -1,5 +1,7 @@
 .banner-slide {
   position: relative;
+  overflow: hidden;
+  border-radius: 4px;
 
   &:hover,
   &:focus-within {
@@ -37,7 +39,6 @@
   &__wrapper {
     width: 100%;
     height: 100%;
-    border-radius: 4px;
   }
 
   &__list {
