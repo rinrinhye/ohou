@@ -669,15 +669,14 @@ button:focus-visible {
 .section--interior-pic {
   overflow: hidden;
 }
-.section--interior-pic__content {
-  width: calc(100% + 80px);
-  margin: 0 -80px;
-}
 .section--interior-pic .interior-pic-slide {
   position: relative;
 }
-.section--interior-pic .interior-pic-slide__list {
+.section--interior-pic .interior-pic-slide__wrapper {
   padding-left: 16px;
+  margin: 0 -16px;
+}
+.section--interior-pic .interior-pic-slide__list {
   scroll-snap-type: x mandatory;
 }
 .section--interior-pic .interior-pic-slide__item {

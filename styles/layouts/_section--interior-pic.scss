@@ -1,17 +1,16 @@
 .section--interior-pic {
   overflow: hidden;
 
-  &__content {
-    width: calc(100% + 80px);
-    margin: 0 -80px;
-  }
-
   .interior-pic-slide {
     position: relative;
   }
 
-  .interior-pic-slide__list {
+  .interior-pic-slide__wrapper {
     padding-left: 16px;
+    margin: 0 (-$sm-margin);
+  }
+
+  .interior-pic-slide__list {
     scroll-snap-type: x mandatory;
   }
 

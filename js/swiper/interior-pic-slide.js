@@ -1,6 +1,9 @@
 const interiorPicSlide = new Swiper('.interior-pic-slide__wrapper', {
-  slidesPerView: 3,
+  slidesPerView: 2.5,
   spaceBetween: 12,
+  observer: true,
+  observeParents: true,
+  observeSlideChildren: true,
   navigation: {
     nextEl: '.interior-pic-slide .slide-next',
     prevEl: '.interior-pic-slide .slide-prev',
