@@ -1,3 +1,5 @@
+import { addClassList, removeClassList } from './utils/classlist.js';
+
 const writeButton = document.querySelector('.header__write-button');
 const writeListPopup = document.querySelector('.write-list-popup');
 

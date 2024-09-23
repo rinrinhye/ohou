@@ -1,7 +1,8 @@
 .banner-slide {
   position: relative;
 
-  &:hover {
+  &:hover,
+  &:focus-within {
     .slide-next,
     .slide-prev {
       z-index: $slide-arrow-button-level;
@@ -18,8 +19,8 @@
     padding: 2px 10px;
     font-weight: 700;
     color: $white;
-    border-top-left-radius: 8px;
     background: $background-5;
+    border-top-left-radius: 8px;
 
     span {
       color: inherit;
@@ -75,8 +76,8 @@
       right: 12px;
       bottom: 12px;
       padding: 4px 10px 4px 12px;
-      border-radius: 20px;
       letter-spacing: -1px;
+      border-radius: 20px;
 
       &::after {
         font-size: 20px;

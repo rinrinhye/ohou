@@ -1,3 +1,11 @@
+import {
+  addClassList,
+  removeClassList,
+  toggleClassList,
+} from './utils/classlist.js';
+import { overlay, openOverlay, closeOverlay } from './overlay.js';
+import { resetScrollTop } from './utils/scroll.js';
+
 const menuButton = document.querySelector('.header__menu-button');
 const menuDrawer = document.querySelector('.menu-drawer');
 

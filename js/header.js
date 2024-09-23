@@ -1,6 +1,14 @@
+import { addClassList, removeClassList } from './utils/classlist.js';
+import { isResponsiveSM } from './utils/responsive.js';
+import {
+  currentScrollY,
+  isScrollDown,
+  setCurrentScrollY,
+} from './utils/scroll.js';
+
 const header = document.querySelector('.header');
-const headerTop = document.querySelector('.header__top');
 const headerBottom = document.querySelector('.header__bottom');
+const lnbMenuPopup = document.querySelector('.lnb-menu-popup');
 
 function hideHeader() {
   addClassList(header, 'hidden');
@@ -19,10 +27,8 @@ function showHeaderBottom() {
 }
 
 function toggleHeaderVisibilityOnScroll() {
-  const newScrollY = window.scrollY;
-
   if (isResponsiveSM()) {
-    if (newScrollY > currentScrollY && newScrollY !== 0) {
+    if (isScrollDown() && window.scrollY !== 0) {
       hideHeader();
     } else {
       showHeader();
@@ -30,14 +36,13 @@ function toggleHeaderVisibilityOnScroll() {
   }
 
   if (!isResponsiveSM()) {
-    if (newScrollY > currentScrollY) {
+    if (isScrollDown() && !lnbMenuPopup.classList.contains('on')) {
       hideHeaderBottom();
     } else {
       showHeaderBottom();
     }
   }
-
-  currentScrollY = newScrollY;
+  setCurrentScrollY(window.scrollY);
 }
 
 function toggleHeaderVisibilityOnResize() {
@@ -45,6 +50,8 @@ function toggleHeaderVisibilityOnResize() {
     if (headerBottom.classList.contains('hidden')) {
       hideHeaderBottom();
     }
+  } else {
+    showHeaderBottom();
   }
 
   if (!isResponsiveSM() && header.classList.contains('hidden')) {
@@ -61,7 +68,7 @@ function showHeaderBottomOnMouseenter() {
 function hideHeaderBottomOnMouseleave() {
   if (
     !isResponsiveSM() &&
-    window.scrollY !== 0 &&
+    currentScrollY !== 0 &&
     !lnbMenuPopup.classList.contains('on')
   ) {
     hideHeaderBottom();
@@ -75,3 +82,40 @@ window.addEventListener('resize', toggleHeaderVisibilityOnResize);
 header.addEventListener('mouseenter', showHeaderBottomOnMouseenter);
 
 header.addEventListener('mouseleave', hideHeaderBottomOnMouseleave);
+
+const headerGnbItems = document.querySelectorAll('.header__gnb-item');
+const headerLnbLists = document.querySelectorAll('.header__lnb-list');
+
+let currentPageGnbItem = document.querySelector('.header__gnb-item.on');
+
+let currentHeaderLnbList = document.querySelector('.header__lnb-list.on');
+
+let currentHoverGnbItem = document.querySelector('.header__gnb-item.highlight');
+
+headerGnbItems.forEach((item, index) => {
+  item.addEventListener('mouseenter', () => {
+    if (!currentHoverGnbItem && item !== currentPageGnbItem) {
+      addClassList(item, 'highlight');
+      currentHoverGnbItem = item;
+    } else if (currentHoverGnbItem && item !== currentPageGnbItem) {
+      removeClassList(currentHoverGnbItem, 'highlight');
+      addClassList(item, 'highlight');
+      currentHoverGnbItem = item;
+    }
+
+    removeClassList(currentHeaderLnbList, 'on');
+    addClassList(headerLnbLists[index], 'on');
+    currentHeaderLnbList = headerLnbLists[index];
+  });
+});
+
+header.addEventListener('mouseleave', () => {
+  const currentPageGnbItemIndex =
+    Array.from(headerGnbItems).indexOf(currentPageGnbItem);
+  removeClassList(currentHeaderLnbList, 'on');
+  addClassList(headerLnbLists[currentPageGnbItemIndex], 'on');
+  currentHeaderLnbList = headerLnbLists[currentPageGnbItemIndex];
+  if (currentHoverGnbItem) {
+    removeClassList(currentHoverGnbItem, 'highlight');
+  }
+});

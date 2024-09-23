@@ -25,13 +25,17 @@
   }
 
   &-list {
-    display: flex;
+    display: none;
     align-items: center;
     flex-grow: 1;
     height: 40px;
     overflow-x: auto;
     overflow-y: hidden;
     gap: 6px;
+
+    &.on {
+      display: flex;
+    }
   }
 
   &-item {

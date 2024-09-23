@@ -1,3 +1,5 @@
+import { toggleClassList } from './utils/classlist.js';
+
 const footerCompanyInfoButton = document.querySelector(
   '.footer__company-info-button'
 );

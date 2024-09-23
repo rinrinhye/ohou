@@ -1,3 +1,5 @@
+import { addClassList, removeClassList } from './utils/classlist.js';
+
 const headerSearchInput = document.querySelector(
   '.header__search-group__input'
 );

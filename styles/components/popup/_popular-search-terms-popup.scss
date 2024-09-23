@@ -18,7 +18,7 @@
   &.on {
     z-index: $popular-search-terms-popup;
     opacity: 1;
-    transition: opacity 0s;
+    transition: opacity 0s, transform 0.2s;
   }
 
   &__header {

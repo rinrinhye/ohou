@@ -1,3 +1,7 @@
+import { resetInputValue } from './utils/input.js';
+import { openOverlay, closeOverlay } from './overlay.js';
+import { addClassList, removeClassList } from './utils/classlist.js';
+
 const searchButton = document.querySelector('.header__search-button');
 const searchDrawer = document.querySelector('.search-drawer');
 const searchDrawerCloseButton = document.querySelector(

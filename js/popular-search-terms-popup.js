@@ -1,3 +1,5 @@
+import { addClassList, removeClassList } from './utils/classlist.js';
+
 const popularSearchTermsButton = document.querySelector(
   '.header__popular-search-terms__button'
 );

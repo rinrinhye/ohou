@@ -49,7 +49,6 @@
       span {
         @include text-style(16, $ohou-blue);
         font-weight: 700;
-        color: $ohou-blue;
       }
 
       &::after {

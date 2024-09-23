@@ -26,13 +26,19 @@
     />
   </head>
   <body>
-    <div class="banner__top">
+    <div class="top-banner--pc desktop-only">
       <a
         href=""
         aria-label="첫 구매/웰컴백 최대 2만원 할인 쿠폰받기"
       ></a>
+      <button class="top-banner__close-button--pc">
+        <img
+          src="assets/ico_close_white_bold.svg"
+          alt=""
+        />
+      </button>
     </div>
-    <header class="header">
+    <header class="header top-50">
       <div class="header__top">
         <div class="header__top-container">
           <div class="header__top-left">
@@ -146,7 +152,7 @@
           <div class="header__bottom-left">
             <nav class="header__lnb">
               <div class="header__lnb-container">
-                <ul class="header__lnb-list">
+                <ul class="header__lnb-list on">
                   <li class="header__lnb-item on"><a href="">홈</a></li>
                   <li class="header__lnb-item"><a href="">추천</a></li>
                   <li class="header__lnb-item"><a href="">#채널</a></li>
@@ -169,6 +175,34 @@
                   </li>
                   <li class="header__lnb-item"><a href="">핫플레이스</a></li>
                   <li class="header__lnb-item"><a href="">이벤트</a></li>
+                </ul>
+                <ul class="header__lnb-list">
+                  <li class="header__lnb-item"><a href="">쇼핑홈</a></li>
+                  <li class="header__lnb-item"><a href="">카테고리</a></li>
+                  <li class="header__lnb-item"><a href="">베스트</a></li>
+                  <li class="header__lnb-item"><a href="">오늘의딜</a></li>
+                  <li class="header__lnb-item"><a href="">리퍼마켓</a></li>
+                  <li class="header__lnb-item"><a href="">단독상품</a></li>
+                  <li class="header__lnb-item"><a href="">빠른배송</a></li>
+                  <li class="header__lnb-item"><a href="">오!쇼룸</a></li>
+                  <li class="header__lnb-item">
+                    <a href="">바이너리샵</a>
+                  </li>
+                  <li class="header__lnb-item"><a href="">기획전</a></li>
+                </ul>
+                <ul class="header__lnb-list">
+                  <li class="header__lnb-item"><a href="">홈</a></li>
+                  <li class="header__lnb-item"><a href="">주거공간시공</a></li>
+                  <li class="header__lnb-item"><a href="">상업공간시공</a></li>
+                  <li class="header__lnb-item"><a href="">시공자재랭킹</a></li>
+                  <li class="header__lnb-item"><a href="">제품설치</a></li>
+                  <li class="header__lnb-item"><a href="">이사</a></li>
+                  <li class="header__lnb-item">
+                    <a href="">집보기체크리스트</a>
+                  </li>
+                  <li class="header__lnb-item">
+                    <a href="">아파트시공사례</a>
+                  </li>
                 </ul>
                 <button
                   class="header__lnb-menu-button"
@@ -240,8 +274,8 @@
             </div>
             <div class="section--main__top-right">
               <div class="banner-slide">
-                <div class="slide-prev sm-hidden"></div>
-                <div class="slide-next sm-hidden"></div>
+                <button class="slide-prev sm-hidden"></button>
+                <button class="slide-next sm-hidden"></button>
                 <div class="banner-slide__wrapper swiper">
                   <ul class="banner-slide__list swiper-wrapper">
                     <li class="banner-slide__item swiper-slide">
@@ -571,8 +605,8 @@
           </a>
           <div class="section--interior-pic__content">
             <div class="interior-pic-slide">
-              <div class="slide-prev sm-hidden"></div>
-              <div class="slide-next sm-hidden"></div>
+              <button class="slide-prev sm-hidden"></button>
+              <button class="slide-next sm-hidden"></button>
               <div class="interior-pic-slide__wrapper swiper">
                 <ul class="interior-pic-slide__list swiper-wrapper">
                   <li class="interior-pic-slide__item swiper-slide">
@@ -580,19 +614,6 @@
                       href=""
                       class="link-overlay"
                     ></a>
-                    <div class="photo-card">
-                      <img
-                        src="assets/interior_pic_01.jpeg"
-                        alt=""
-                        class="photo-card__image"
-                      />
-                      <button class="scrap-button">
-                        <img
-                          src="assets/ico_scrap.svg"
-                          alt=""
-                        />
-                      </button>
-                    </div>
                     <div class="author-group interior-pic-slide__author-group">
                       <a
                         href=""
@@ -608,15 +629,9 @@
                         <span class="interior-pic-slide__author">행복하양</span>
                       </a>
                     </div>
-                  </li>
-                  <li class="interior-pic-slide__item swiper-slide">
-                    <a
-                      href=""
-                      class="link-overlay"
-                    ></a>
                     <div class="photo-card">
                       <img
-                        src="assets/interior_pic_02.jpeg"
+                        src="assets/interior_pic_01.jpeg"
                         alt=""
                         class="photo-card__image"
                       />
@@ -627,6 +642,12 @@
                         />
                       </button>
                     </div>
+                  </li>
+                  <li class="interior-pic-slide__item swiper-slide">
+                    <a
+                      href=""
+                      class="link-overlay"
+                    ></a>
                     <div class="author-group interior-pic-slide__author-group">
                       <a
                         href=""
@@ -642,15 +663,9 @@
                         <span class="interior-pic-slide__author">ysh_haus</span>
                       </a>
                     </div>
-                  </li>
-                  <li class="interior-pic-slide__item swiper-slide">
-                    <a
-                      href=""
-                      class="link-overlay"
-                    ></a>
                     <div class="photo-card">
                       <img
-                        src="assets/interior_pic_03.jpeg"
+                        src="assets/interior_pic_02.jpeg"
                         alt=""
                         class="photo-card__image"
                       />
@@ -661,6 +676,12 @@
                         />
                       </button>
                     </div>
+                  </li>
+                  <li class="interior-pic-slide__item swiper-slide">
+                    <a
+                      href=""
+                      class="link-overlay"
+                    ></a>
                     <div class="author-group interior-pic-slide__author-group">
                       <a
                         href=""
@@ -678,15 +699,9 @@
                         >
                       </a>
                     </div>
-                  </li>
-                  <li class="interior-pic-slide__item swiper-slide">
-                    <a
-                      href=""
-                      class="link-overlay"
-                    ></a>
                     <div class="photo-card">
                       <img
-                        src="assets/interior_pic_04.jpeg"
+                        src="assets/interior_pic_03.jpeg"
                         alt=""
                         class="photo-card__image"
                       />
@@ -697,6 +712,12 @@
                         />
                       </button>
                     </div>
+                  </li>
+                  <li class="interior-pic-slide__item swiper-slide">
+                    <a
+                      href=""
+                      class="link-overlay"
+                    ></a>
                     <div class="author-group interior-pic-slide__author-group">
                       <a
                         href=""
@@ -714,15 +735,9 @@
                         >
                       </a>
                     </div>
-                  </li>
-                  <li class="interior-pic-slide__item swiper-slide">
-                    <a
-                      href=""
-                      class="link-overlay"
-                    ></a>
                     <div class="photo-card">
                       <img
-                        src="assets/interior_pic_05.jpeg"
+                        src="assets/interior_pic_04.jpeg"
                         alt=""
                         class="photo-card__image"
                       />
@@ -733,6 +748,12 @@
                         />
                       </button>
                     </div>
+                  </li>
+                  <li class="interior-pic-slide__item swiper-slide">
+                    <a
+                      href=""
+                      class="link-overlay"
+                    ></a>
                     <div class="author-group interior-pic-slide__author-group">
                       <a
                         href=""
@@ -750,15 +771,9 @@
                         ></a
                       >
                     </div>
-                  </li>
-                  <li class="interior-pic-slide__item swiper-slide">
-                    <a
-                      href=""
-                      class="link-overlay"
-                    ></a>
                     <div class="photo-card">
                       <img
-                        src="assets/interior_pic_06.jpeg"
+                        src="assets/interior_pic_05.jpeg"
                         alt=""
                         class="photo-card__image"
                       />
@@ -769,6 +784,12 @@
                         />
                       </button>
                     </div>
+                  </li>
+                  <li class="interior-pic-slide__item swiper-slide">
+                    <a
+                      href=""
+                      class="link-overlay"
+                    ></a>
                     <div class="author-group interior-pic-slide__author-group">
                       <a
                         href=""
@@ -786,15 +807,9 @@
                         >
                       </a>
                     </div>
-                  </li>
-                  <li class="interior-pic-slide__item swiper-slide">
-                    <a
-                      href=""
-                      class="link-overlay"
-                    ></a>
                     <div class="photo-card">
                       <img
-                        src="assets/interior_pic_07.jpeg"
+                        src="assets/interior_pic_06.jpeg"
                         alt=""
                         class="photo-card__image"
                       />
@@ -805,6 +820,12 @@
                         />
                       </button>
                     </div>
+                  </li>
+                  <li class="interior-pic-slide__item swiper-slide">
+                    <a
+                      href=""
+                      class="link-overlay"
+                    ></a>
                     <div class="author-group interior-pic-slide__author-group">
                       <a
                         href=""
@@ -822,15 +843,9 @@
                         >
                       </a>
                     </div>
-                  </li>
-                  <li class="interior-pic-slide__item swiper-slide">
-                    <a
-                      href=""
-                      class="link-overlay"
-                    ></a>
                     <div class="photo-card">
                       <img
-                        src="assets/interior_pic_08.jpeg"
+                        src="assets/interior_pic_07.jpeg"
                         alt=""
                         class="photo-card__image"
                       />
@@ -841,6 +856,12 @@
                         />
                       </button>
                     </div>
+                  </li>
+                  <li class="interior-pic-slide__item swiper-slide">
+                    <a
+                      href=""
+                      class="link-overlay"
+                    ></a>
                     <div class="author-group interior-pic-slide__author-group">
                       <a
                         href=""
@@ -856,15 +877,9 @@
                         <span class="interior-pic-slide__author">joienevv</span>
                       </a>
                     </div>
-                  </li>
-                  <li class="interior-pic-slide__item swiper-slide">
-                    <a
-                      href=""
-                      class="link-overlay"
-                    ></a>
                     <div class="photo-card">
                       <img
-                        src="assets/interior_pic_09.jpeg"
+                        src="assets/interior_pic_08.jpeg"
                         alt=""
                         class="photo-card__image"
                       />
@@ -875,6 +890,12 @@
                         />
                       </button>
                     </div>
+                  </li>
+                  <li class="interior-pic-slide__item swiper-slide">
+                    <a
+                      href=""
+                      class="link-overlay"
+                    ></a>
                     <div class="author-group interior-pic-slide__author-group">
                       <a
                         href=""
@@ -892,15 +913,9 @@
                         ></a
                       >
                     </div>
-                  </li>
-                  <li class="interior-pic-slide__item swiper-slide">
-                    <a
-                      href=""
-                      class="link-overlay"
-                    ></a>
                     <div class="photo-card">
                       <img
-                        src="assets/interior_pic_10.jpeg"
+                        src="assets/interior_pic_09.jpeg"
                         alt=""
                         class="photo-card__image"
                       />
@@ -911,6 +926,12 @@
                         />
                       </button>
                     </div>
+                  </li>
+                  <li class="interior-pic-slide__item swiper-slide">
+                    <a
+                      href=""
+                      class="link-overlay"
+                    ></a>
                     <div class="author-group interior-pic-slide__author-group">
                       <a
                         href=""
@@ -925,6 +946,19 @@
                         </div>
                         <span class="interior-pic-slide__author">_밖</span>
                       </a>
+                    </div>
+                    <div class="photo-card">
+                      <img
+                        src="assets/interior_pic_10.jpeg"
+                        alt=""
+                        class="photo-card__image"
+                      />
+                      <button class="scrap-button">
+                        <img
+                          src="assets/ico_scrap.svg"
+                          alt=""
+                        />
+                      </button>
                     </div>
                   </li>
                   <li class="interior-pic-slide__item swiper-slide">
@@ -1099,8 +1133,8 @@
           </div>
           <div class="section--product-category__content">
             <div class="product-category-shortcut-slide">
-              <div class="slide-prev sm-hidden"></div>
-              <div class="slide-next sm-hidden"></div>
+              <button class="slide-prev sm-hidden"></button>
+              <button class="slide-next sm-hidden"></button>
               <div class="product-category-shortcut-slide__wrapper swiper">
                 <ul
                   class="product-category-shortcut-slide__list swiper-wrapper"
@@ -1346,7 +1380,9 @@
                       src="assets/product_bugwang_tooth_brush.jpeg"
                       alt=""
                     />
-                    <span class="badge--time">07:04:21 남음</span>
+                    <span class="badge--time">
+                      <!-- 07:04:21 남음 -->
+                    </span>
                     <button
                       class="scrap-button"
                       aria-label="찜하기"
@@ -1402,7 +1438,9 @@
                       src="assets/product_ascent_diffuser.jpeg"
                       alt=""
                     />
-                    <span class="badge--time">07:04:21 남음</span>
+                    <span class="badge--time">
+                      <!-- 07:04:21 남음 -->
+                    </span>
                     <button
                       class="scrap-button"
                       aria-label="찜하기"
@@ -1475,7 +1513,9 @@
                       src="assets/product_dreame_robot_vacuum.jpeg"
                       alt=""
                     />
-                    <span class="badge--time">07:04:21 남음</span>
+                    <span class="badge--time">
+                      <!-- 07:04:21 남음 -->
+                    </span>
                     <button
                       class="scrap-button"
                       aria-label="찜하기"
@@ -1547,7 +1587,9 @@
                       src="assets/product_lissem_furniture.jpeg"
                       alt=""
                     />
-                    <span class="badge--time">07:04:21 남음</span>
+                    <span class="badge--time">
+                      <!-- 07:04:21 남음 -->
+                    </span>
                     <button
                       class="scrap-button"
                       aria-label="찜하기"
@@ -1599,8 +1641,8 @@
           </div>
           <div class="section--today-deal__content sm-hidden">
             <div class="today-deal-product-slide">
-              <div class="slide-prev sm-hidden"></div>
-              <div class="slide-next sm-hidden"></div>
+              <button class="slide-prev sm-hidden"></button>
+              <button class="slide-next sm-hidden"></button>
               <div class="today-deal-product-slide__wrapper swiper">
                 <ul class="today-deal-product-slide__list swiper-wrapper">
                   <li class="today-deal-product-slide__item swiper-slide">
@@ -1615,7 +1657,9 @@
                           src="assets/product_bugwang_tooth_brush.jpeg"
                           alt=""
                         />
-                        <span class="badge--time">07:04:21 남음</span>
+                        <span class="badge--time">
+                          <!-- 07:04:21 남음 -->
+                        </span>
                         <button
                           class="scrap-button"
                           aria-label="찜하기"
@@ -1671,7 +1715,9 @@
                           src="assets/product_ascent_diffuser.jpeg"
                           alt=""
                         />
-                        <span class="badge--time">07:04:21 남음</span>
+                        <span class="badge--time">
+                          <!-- 07:04:21 남음 -->
+                        </span>
                         <button
                           class="scrap-button"
                           aria-label="찜하기"
@@ -1744,7 +1790,9 @@
                           src="assets/product_dreame_robot_vacuum.jpeg"
                           alt=""
                         />
-                        <span class="badge--time">07:04:21 남음</span>
+                        <span class="badge--time">
+                          <!-- 07:04:21 남음 -->
+                        </span>
                         <button
                           class="scrap-button"
                           aria-label="찜하기"
@@ -1816,7 +1864,9 @@
                           src="assets/product_lissem_furniture.jpeg"
                           alt=""
                         />
-                        <span class="badge--time">07:04:21 남음</span>
+                        <span class="badge--time">
+                          <!-- 07:04:21 남음 -->
+                        </span>
                         <button
                           class="scrap-button"
                           aria-label="찜하기"
@@ -1868,10 +1918,12 @@
                       <div class="photo-card">
                         <img
                           class="photo-card__image"
-                          src="assets/product_ilovebebe_wet_wipes.jfif"
+                          src="assets/product_ilovebebe_wet_wipes.jpeg"
                           alt=""
                         />
-                        <span class="badge--time">07:04:21 남음</span>
+                        <span class="badge--time">
+                          <!-- 07:04:21 남음 -->
+                        </span>
                         <button
                           class="scrap-button"
                           aria-label="찜하기"
@@ -1940,10 +1992,12 @@
                       <div class="photo-card">
                         <img
                           class="photo-card__image"
-                          src="assets/product_lg_refrigerator.jfif"
+                          src="assets/product_lg_refrigerator.jpeg"
                           alt=""
                         />
-                        <span class="badge--time">07:04:21 남음</span>
+                        <span class="badge--time">
+                          <!-- 07:04:21 남음 -->
+                        </span>
                         <button
                           class="scrap-button"
                           aria-label="찜하기"
@@ -2003,10 +2057,12 @@
                       <div class="photo-card">
                         <img
                           class="photo-card__image"
-                          src="assets/product_minix_mini_dryer.jfif"
+                          src="assets/product_minix_mini_dryer.jpeg"
                           alt=""
                         />
-                        <span class="badge--time">07:04:21 남음</span>
+                        <span class="badge--time">
+                          <!-- 07:04:21 남음 -->
+                        </span>
                         <button
                           class="scrap-button"
                           aria-label="찜하기"
@@ -2060,10 +2116,12 @@
                       <div class="photo-card">
                         <img
                           class="photo-card__image"
-                          src="assets/product_casamia_sofa.jfif"
+                          src="assets/product_casamia_sofa.jpeg"
                           alt=""
                         />
-                        <span class="badge--time">07:04:21 남음</span>
+                        <span class="badge--time">
+                          <!-- 07:04:21 남음 -->
+                        </span>
                         <button
                           class="scrap-button"
                           aria-label="찜하기"
@@ -2113,10 +2171,12 @@
                       <div class="photo-card">
                         <img
                           class="photo-card__image"
-                          src="assets/product_brown_wet_wipes.jfif"
+                          src="assets/product_brown_wet_wipes.jpeg"
                           alt=""
                         />
-                        <span class="badge--time">07:04:21 남음</span>
+                        <span class="badge--time">
+                          <!-- 07:04:21 남음 -->
+                        </span>
                         <button
                           class="scrap-button"
                           aria-label="찜하기"
@@ -2168,10 +2228,12 @@
                       <div class="photo-card">
                         <img
                           class="photo-card__image"
-                          src="assets/product_mari_steiger_wastebasket.jfif"
+                          src="assets/product_mari_steiger_wastebasket.jpeg"
                           alt=""
                         />
-                        <span class="badge--time">07:04:21 남음</span>
+                        <span class="badge--time">
+                          <!-- 07:04:21 남음 -->
+                        </span>
                         <button
                           class="scrap-button"
                           aria-label="찜하기"
@@ -2233,10 +2295,12 @@
                       <div class="photo-card">
                         <img
                           class="photo-card__image"
-                          src="assets/product_megaten_tooth_brush.jfif"
+                          src="assets/product_megaten_tooth_brush.jpeg"
                           alt=""
                         />
-                        <span class="badge--time">07:04:21 남음</span>
+                        <span class="badge--time">
+                          <!-- 07:04:21 남음 -->
+                        </span>
                         <button
                           class="scrap-button"
                           aria-label="찜하기"
@@ -2542,8 +2606,8 @@
           </a>
           <div class="section--best-product__content">
             <div class="product-category-control-slide">
-              <div class="slide-prev sm-hidden"></div>
-              <div class="slide-next sm-hidden"></div>
+              <button class="slide-prev sm-hidden"></button>
+              <button class="slide-next sm-hidden"></button>
               <div class="product-category-control-slide__wrapper swiper">
                 <ul class="product-category-control-slide__list swiper-wrapper">
                   <li
@@ -3225,7 +3289,7 @@
         </div>
       </div>
     </footer>
-    <div class="write-list-popup">
+    <div class="popup write-list-popup">
       <ul class="write-list-popup__list">
         <li class="write-list-popup__item">
           <a
@@ -3333,7 +3397,7 @@
         </li>
       </ul>
     </div>
-    <div class="lnb-menu-popup sm-hidden">
+    <div class="popup lnb-menu-popup sm-hidden">
       <div class="lnb-menu-popup__list">
         <!-- <a
           href=""
@@ -3362,7 +3426,7 @@
         > -->
       </div>
     </div>
-    <div class="popular-search-terms-popup">
+    <div class="popup popular-search-terms-popup">
       <div class="popular-search-terms-popup__header">
         <strong class="popular-search-terms-popup__title">인기 검색어</strong>
         <button class="popular-search-terms-popup__close-button"></button>
@@ -3501,7 +3565,7 @@
       </nav>
       <button class="mobile-tab-menu__close-button">
         <img
-          src="assets/ico_close_dark_gray.svg"
+          src="assets/ico_close_dark_gray_bold.svg"
           alt=""
         />
       </button>
@@ -3813,23 +3877,5 @@
         </div>
       </div>
     </div>
-
-    <script src="js/common.js"></script>
-    <script src="js/swiper/banner-slide.js"></script>
-    <script src="js/swiper/interior-pic-slide.js"></script>
-    <script src="js/swiper/product-category-shortcut-slide.js"></script>
-    <script src="js/swiper/today-deal-product-slide.js"></script>
-    <script src="js/swiper/best-product-category-slide.js"></script>
-    <script src="js/header.js"></script>
-    <script src="js/lnb.js"></script>
-    <cript src="js/search-group.js"></cript>
-    <script src="js/popular-search-terms-popup.js"></script>
-    <script src="js/write-list-popup.js"></script>
-    <script src="js/search-drawer.js"></script>
-    <script src="js/lnb-menu-button.js"></script>
-    <script src="js/menu-drawer.js"></script>
-    <script src="js/popup-transform.js"></script>
-    <script src="js/footer.js"></script>
-    <script src="js/timer.js"></script>
   </body>
 </html>
