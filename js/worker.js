@@ -1,6 +1,7 @@
 onmessage = function (e) {
   if (e.data.type === 'end') {
     clearInterval(timer);
+    worker.terminate();
   }
 };
 
