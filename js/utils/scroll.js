@@ -11,3 +11,11 @@ export function setCurrentScrollY(value) {
 export function isScrollDown() {
   return currentScrollY < window.scrollY ? true : false;
 }
+
+export function preventScroll() {
+  document.body.style.overflow = 'hidden';
+}
+
+export function enableScroll() {
+  document.body.style.overflow = '';
+}

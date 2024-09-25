@@ -1,6 +1,7 @@
 import { resetInputValue } from './utils/input.js';
 import { openOverlay, closeOverlay } from './overlay.js';
 import { addClassList, removeClassList } from './utils/classlist.js';
+import { enableScroll, preventScroll } from './utils/scroll.js';
 
 const searchButton = document.querySelector('.header__search-button');
 const searchDrawer = document.querySelector('.search-drawer');
@@ -16,11 +17,13 @@ function openSearchDrawer() {
   addClassList(searchDrawer, 'on');
   openOverlay();
   window.addEventListener('click', clickOverlay);
+  preventScroll();
 }
 
 function closeSearchDrawer() {
   removeClassList(searchDrawer, 'on');
   closeOverlay();
+  enableScroll();
 }
 
 function clickOverlay(e) {

@@ -4,7 +4,7 @@ import {
   toggleClassList,
 } from './utils/classlist.js';
 import { overlay, openOverlay, closeOverlay } from './overlay.js';
-import { resetScrollTop } from './utils/scroll.js';
+import { enableScroll, preventScroll, resetScrollTop } from './utils/scroll.js';
 
 const menuButton = document.querySelector('.header__menu-button');
 const menuDrawer = document.querySelector('.menu-drawer');
@@ -17,6 +17,7 @@ const menuDrawerGnbItems = document.querySelectorAll('.menu-drawer__gnb-item');
 function openMenuDrawer() {
   addClassList(menuDrawer, 'on');
   openOverlay();
+  preventScroll();
 }
 
 function closeMenuDrawer() {
@@ -24,6 +25,7 @@ function closeMenuDrawer() {
   closeOverlay();
   resetClassMenuDrawerGnbItems();
   resetScrollTop(menuDrawer);
+  enableScroll();
 }
 
 function toggleMenuDrawerGnbItem(e) {
