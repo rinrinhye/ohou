@@ -108,6 +108,7 @@
   }
 
   &__recent-searches__item {
+    position: relative;
     padding: 14px 16px;
 
     &:hover {
@@ -128,7 +129,11 @@
   }
 
   &__recent-searches__keyword-delete-button {
+    position: absolute;
+    top: 50%;
+    right: 12px;
     cursor: pointer;
+    transform: translateY(-50%);
 
     &:hover {
       opacity: 0.6;

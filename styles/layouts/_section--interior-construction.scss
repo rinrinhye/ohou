@@ -40,14 +40,11 @@
   }
 
   .review__content {
+    @include line-clamp(4);
     @include text-style(14);
-    display: -webkit-box;
     margin-top: 2px;
-    overflow: hidden;
     line-height: 20px;
     word-break: keep-all;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 4;
   }
 
   @include responsive(M) {

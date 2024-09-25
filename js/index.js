@@ -19,11 +19,10 @@ import './search-group.js';
 
 import './top-banner--pc.js';
 import './write-list-popup.js';
-// import './timer.js';
 import './worker.js';
 
 import './swiper/banner-slide.js';
-import './swiper/best-product-category-slide.js';
+import './swiper/best-product-category-control-slide.js';
 import './swiper/interior-pic-slide.js';
 import './swiper/product-category-shortcut-slide.js';
 import './swiper/today-deal-product-slide.js';

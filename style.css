@@ -901,16 +901,16 @@ button:focus-visible {
   font-weight: 700;
 }
 .section--interior-construction .review__content {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  -webkit-line-clamp: 4;
   font-size: 14px;
   line-height: 18px;
   letter-spacing: -0.3px;
-  display: -webkit-box;
   margin-top: 2px;
-  overflow: hidden;
   line-height: 20px;
   word-break: keep-all;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 4;
 }
 @media screen and (width >= 768px) {
   .section--interior-construction .interior-construction-review__list {
@@ -1454,6 +1454,7 @@ button:focus-visible {
   cursor: pointer;
 }
 .search-drawer__recent-searches__item {
+  position: relative;
   padding: 14px 16px;
 }
 .search-drawer__recent-searches__item:hover {
@@ -1472,7 +1473,11 @@ button:focus-visible {
   letter-spacing: -0.3px;
 }
 .search-drawer__recent-searches__keyword-delete-button {
+  position: absolute;
+  top: 50%;
+  right: 12px;
   cursor: pointer;
+  transform: translateY(-50%);
 }
 .search-drawer__recent-searches__keyword-delete-button:hover {
   opacity: 0.6;
@@ -2400,14 +2405,14 @@ button:focus-visible {
   color: #828c94;
 }
 .product .product__title-group .product__name {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  -webkit-line-clamp: 3;
   font-size: 14px;
   line-height: 18px;
   letter-spacing: -0.3px;
   color: #424242;
-  display: -webkit-box;
-  overflow: hidden;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 3;
 }
 .product .product__review-group {
   display: flex;
