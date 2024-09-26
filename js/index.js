@@ -21,6 +21,7 @@ import './top-banner--pc.js';
 import './write-list-popup.js';
 import './worker.js';
 
+import './swiper/arrow-button.js';
 import './swiper/banner-slide.js';
 import './swiper/best-product-category-control-slide.js';
 import './swiper/interior-pic-slide.js';
