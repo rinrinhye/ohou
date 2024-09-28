@@ -1,11 +1,11 @@
 a,
 button {
   &:focus-visible {
+    box-shadow: 0 0 0 3px $outline inset;
+    border-radius: 3px;
     outline: 0;
     // outline-offset: -1px;
     // outline-color: $ohou-blue;
-    box-shadow: 0 0 0 3px $ohou-blue inset;
-    border-radius: 3px;
   }
 }
 
@@ -28,4 +28,8 @@ button {
 
 .none {
   display: none;
+}
+
+body {
+  position: relative;
 }

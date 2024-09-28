@@ -54,3 +54,22 @@
   overflow: hidden;
   clip: rect(0, 0, 0, 0);
 }
+
+.direct-link {
+  position: relative;
+
+  a {
+    position: absolute;
+    top: -999px;
+    padding: 4px 10px;
+    font-weight: 700;
+    color: $white;
+    background: $ohou-blue;
+    border-radius: 4px;
+
+    &:focus {
+      top: 0;
+      z-index: $direct-link-level;
+    }
+  }
+}

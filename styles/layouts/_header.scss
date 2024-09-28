@@ -7,10 +7,6 @@
   transform: translateY(0);
   transition: transform 0.1s;
 
-  &.top-50 {
-    margin-top: 50px;
-  }
-
   &.hidden {
     transform: translateY(-100%);
   }

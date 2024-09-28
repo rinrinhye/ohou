@@ -103,6 +103,10 @@
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   </head>
   <body>
+    <div class="direct-link desktop-only">
+      <a href="#main">본문 바로가기</a>
+      <a href="#gnb">메뉴 바로가기</a>
+    </div>
     <div class="top-banner--pc desktop-only">
       <a
         href=""
@@ -133,7 +137,10 @@
               >
               </a>
             </h1>
-            <nav class="header__gnb sm-hidden">
+            <nav
+              id="gnb"
+              class="header__gnb sm-hidden"
+            >
               <ul class="header__gnb-list">
                 <li class="header__gnb-item on"><a href="">커뮤니티</a></li>
                 <li class="header__gnb-item"><a href="">쇼핑</a></li>
@@ -272,9 +279,15 @@
                 </ul>
                 <ul class="header__lnb-list">
                   <li class="header__lnb-item"><a href="">홈</a></li>
-                  <li class="header__lnb-item"><a href="">주거공간시공</a></li>
-                  <li class="header__lnb-item"><a href="">상업공간시공</a></li>
-                  <li class="header__lnb-item"><a href="">시공자재랭킹</a></li>
+                  <li class="header__lnb-item">
+                    <a href="">주거공간시공</a>
+                  </li>
+                  <li class="header__lnb-item">
+                    <a href="">상업공간시공</a>
+                  </li>
+                  <li class="header__lnb-item">
+                    <a href="">시공자재랭킹</a>
+                  </li>
                   <li class="header__lnb-item"><a href="">제품설치</a></li>
                   <li class="header__lnb-item"><a href="">이사</a></li>
                   <li class="header__lnb-item">
@@ -315,8 +328,10 @@
         </div>
       </div>
     </header>
-
-    <main class="main">
+    <main
+      id="main"
+      class="main"
+    >
       <section class="section section--main">
         <div class="section__container">
           <div class="section--main__top">
