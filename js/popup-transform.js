@@ -9,7 +9,7 @@ import { applyCssTranslate, applyCssTranslateY } from './utils/translate.js';
 
 const popups = document.querySelectorAll('.popup');
 
-function popupTransform() {
+export function popupTransform() {
   const pcTopBanner = document.querySelector('.top-banner--pc');
   const maxXLWidth = 1280;
   const y = 50;
@@ -39,9 +39,6 @@ function popupTransform() {
   }
 }
 
-window.addEventListener('load', popupTransform);
-window.addEventListener('resize', popupTransform);
-
 function resetPopupPosition() {
   popups.forEach((popup) => {
     applyCssTranslate(popup, 0, 0);
@@ -60,7 +57,7 @@ export function setPopupPosition(x, y) {
   });
 }
 
-window.addEventListener('scroll', () => {
+export function setPopupPositionOnScroll() {
   const pcTopBanner = document.querySelector('.top-banner--pc');
   const maxXLWidth = 1280;
   const x = (currentInnerWidth - maxXLWidth) / 2;
@@ -74,7 +71,7 @@ window.addEventListener('scroll', () => {
   } else if (isResponsiveLG() && !pcTopBanner) {
     setPopupPosition(0, 0);
   } else if (isResponsiveXL() && pcTopBanner) {
-    if (currentScrollY === 0) {
+    if (currentScrollY < 15) {
       setPopupPosition(x, 50);
     } else {
       setPopupPosition(x, 0);
@@ -82,4 +79,6 @@ window.addEventListener('scroll', () => {
   } else if (isResponsiveXL() && !pcTopBanner) {
     setPopupPosition(x, 0);
   }
-});
+}
+
+window.addEventListener('load', popupTransform);

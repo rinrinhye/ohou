@@ -1,10 +1,6 @@
 import { addClassList, removeClassList } from './utils/classlist.js';
 import { isResponsiveSM } from './utils/responsive.js';
-import {
-  currentScrollY,
-  isScrollDown,
-  setCurrentScrollY,
-} from './utils/scroll.js';
+import { currentScrollY, isScrollDown } from './utils/scroll.js';
 
 const header = document.querySelector('.header');
 const headerBottom = document.querySelector('.header__bottom');
@@ -26,7 +22,7 @@ function showHeaderBottom() {
   removeClassList(headerBottom, 'hidden');
 }
 
-function toggleHeaderVisibilityOnScroll() {
+export function toggleHeaderVisibilityOnScroll() {
   if (isResponsiveSM()) {
     if (isScrollDown() && window.scrollY !== 0) {
       hideHeader();
@@ -42,10 +38,9 @@ function toggleHeaderVisibilityOnScroll() {
       showHeaderBottom();
     }
   }
-  setCurrentScrollY(window.scrollY);
 }
 
-function toggleHeaderVisibilityOnResize() {
+export function toggleHeaderVisibilityOnResize() {
   if (isResponsiveSM()) {
     if (headerBottom.classList.contains('hidden')) {
       hideHeaderBottom();
@@ -74,10 +69,6 @@ function hideHeaderBottomOnMouseleave() {
     hideHeaderBottom();
   }
 }
-
-window.addEventListener('scroll', toggleHeaderVisibilityOnScroll);
-
-window.addEventListener('resize', toggleHeaderVisibilityOnResize);
 
 header.addEventListener('mouseenter', showHeaderBottomOnMouseenter);
 

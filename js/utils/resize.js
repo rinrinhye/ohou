@@ -5,7 +5,7 @@ export function setIsScreenExpanded(value) {
   isScreenExpanded = value;
 }
 
-function updateInnerWidth() {
+export function updateInnerWidth() {
   if (currentInnerWidth > window.innerWidth) {
     isScreenExpanded = false;
   } else if (currentInnerWidth === window.innerWidth) {
@@ -15,5 +15,3 @@ function updateInnerWidth() {
   }
   currentInnerWidth = window.innerWidth;
 }
-
-window.addEventListener('resize', updateInnerWidth);

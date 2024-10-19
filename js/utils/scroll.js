@@ -4,8 +4,8 @@ export function resetScrollTop(target) {
   target.scrollTop = 0;
 }
 
-export function setCurrentScrollY(value) {
-  currentScrollY = value;
+export function updateCurrentScrollY() {
+  currentScrollY = scrollY;
 }
 
 export function isScrollDown() {

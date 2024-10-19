@@ -6,6 +6,7 @@ import {
   openMobileTabMenu,
   closeMobileTabMenu,
 } from './lnb-mobile-tab-menu.js';
+import { popupState } from './all-resize-event.js';
 
 const header = document.querySelector('.header');
 const headerBottom = document.querySelector('.header__bottom');
@@ -22,12 +23,14 @@ const mobileTabMenu = document.querySelector('.mobile-tab-menu');
 
 function openLnbMenuPopup() {
   addClassList(lnbMenuPopup, 'on');
+  popupState.lnbMenuPopup = true;
 
   window.addEventListener('click', clickOutsideLnbMenuButton);
 }
 
 function closeLnbMenuPopup() {
   removeClassList(lnbMenuPopup, 'on');
+  popupState.lnbMenuPopup = false;
 }
 
 export function toggleLnbMenuPopup() {
@@ -57,7 +60,7 @@ function showLnbMenuButtonOnMouseleave() {
   header.removeEventListener('mouseover', hideLnbMenuButton);
 }
 
-function toggleMobileTabMenuAndlnbMenuPopupOnResize() {
+export function toggleMobileTabMenuAndlnbMenuPopupOnResize() {
   if (
     mobileTabMenu.classList.contains('on') ||
     lnbMenuPopup.classList.contains('on')
@@ -76,7 +79,7 @@ function toggleMobileTabMenuAndlnbMenuPopupOnResize() {
   }
 }
 
-function closeLnbMenuPopupToScrollDown() {
+export function closeLnbMenuPopupToScrollDown() {
   if (isScrollDown()) {
     closeLnbMenuPopup();
   }
@@ -173,11 +176,8 @@ headerGnbItems.forEach((item) => {
 
 header.addEventListener('mouseenter', startHeaderBottomObserverOnHover);
 
-window.addEventListener('scroll', closeLnbMenuPopupToScrollDown);
-
-window.addEventListener('resize', toggleMobileTabMenuAndlnbMenuPopupOnResize);
+// window.addEventListener('scroll', closeLnbMenuPopupToScrollDown);
 
 header.addEventListener('mouseleave', showLnbMenuButtonOnMouseleave);
 
-//
 headerBottomObserver.observe(headerBottom);

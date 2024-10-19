@@ -5,6 +5,9 @@ import './utils/responsive.js';
 import './utils/scroll.js';
 import './utils/translate.js';
 
+import './all-resize-event.js';
+import './all-scroll-event.js';
+
 import './footer.js';
 import './header.js';
 import './lnb-mobile-tab-menu.js';

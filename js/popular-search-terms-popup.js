@@ -1,4 +1,5 @@
 import { addClassList, removeClassList } from './utils/classlist.js';
+import { popupState } from './all-resize-event.js';
 
 const popularSearchTermsButton = document.querySelector(
   '.header__popular-search-terms__button'
@@ -12,11 +13,13 @@ const popularSearchTermsPopupCloseButton = document.querySelector(
 
 function openPopularSearchTermsBox() {
   addClassList(popularSearchTermsPopup, 'on');
+  popupState.searchTermsPopup = true;
   window.addEventListener('click', clickOutSidePopularSearchTermsBox);
 }
 
 function closePopularSearchTermsBox() {
   removeClassList(popularSearchTermsPopup, 'on');
+  popupState.searchTermsPopup = false;
 }
 
 function clickOutSidePopularSearchTermsBox(e) {
