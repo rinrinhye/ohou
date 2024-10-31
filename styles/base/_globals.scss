@@ -1,58 +1,78 @@
-.desktop-only {
-  @media screen and (width < $lg-breakpoint) {
-    display: none !important;
-  }
-}
-
-.desktop-hidden {
-  @media screen and (width > $lg-breakpoint) {
-    display: none !important;
-  }
-}
-
-.sm-hidden {
-  @media screen and (width < $md-breakpoint) {
-    display: none !important;
-  }
-}
-
-.md-hidden {
-  @media screen and (width >= $md-breakpoint) and (width < $lg-breakpoint) {
-    display: none !important;
-  }
-}
-
-.lg-hidden {
-  @media screen and (width >= $lg-breakpoint) and (width < $xl-breakpoint) {
-    display: none !important;
-  }
-}
-
-.xl-hidden {
-  @media screen and (width >= $xl-breakpoint) {
-    display: none !important;
-  }
+.sr-only {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
 }
 
 .sm-only {
-  @media screen and (width >= $md-breakpoint) {
+  @media screen and (min-width: $md-breakpoint) {
+    display: none !important;
+  }
+}
+
+.md-only {
+  @media screen and (max-width: ( $md-breakpoint - 1)) {
+    display: none !important;
+  }
+
+  @media screen and (min-width: $lg-breakpoint) {
+    display: none !important;
+  }
+}
+
+.lg-only {
+  @media screen and (max-width: ( $lg-breakpoint - 1)) {
+    display: none !important;
+  }
+
+  @media screen and (min-width: $xl-breakpoint) {
     display: none !important;
   }
 }
 
 .xl-only {
-  @media screen and (width < $xl-breakpoint) {
+  @media screen and (max-width: ( $xl-breakpoint - 1)) {
     display: none !important;
   }
 }
 
-.sr-only {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
+.sm-hidden {
+  @media screen and (max-width: ( $md-breakpoint - 1)) {
+    display: none !important;
+  }
+}
+
+.md-hidden {
+  @media screen and (min-width: ( $md-breakpoint )) and (max-width: ( $lg-breakpoint - 1)) {
+    display: none !important;
+  }
+}
+
+.lg-hidden {
+  @media screen and (min-width: ( $lg-breakpoint )) and (max-width: ( $xl-breakpoint - 1)) {
+    display: none !important;
+  }
+}
+
+.xl-hidden {
+  @media screen and (min-width: ( $xl-breakpoint )) {
+    display: none !important;
+  }
+}
+
+.lg-plus-hidden {
+  @media screen and (min-width: $lg-breakpoint) {
+    display: none !important;
+  }
+}
+
+.lg-plus-only {
+  @media screen and (max-width: ($lg-breakpoint - 1)) {
+    display: none !important;
+  }
 }
 
 .direct-link {
