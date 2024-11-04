@@ -1,12 +1,12 @@
 import { addClassList, removeClassList } from './utils/classlist.js';
 import { isResponsiveSM } from './utils/responsive.js';
 import { isScreenExpanded, setIsScreenExpanded } from './utils/resize.js';
-import { isScrollDown } from './utils/scroll.js';
 import {
   openMobileTabMenu,
   closeMobileTabMenu,
 } from './lnb-mobile-tab-menu.js';
 import { popupState } from './all-resize-event.js';
+import { scrollState } from './utils/scroll.js';
 
 const header = document.querySelector('.header');
 const headerBottom = document.querySelector('.header__bottom');
@@ -80,7 +80,7 @@ export function toggleMobileTabMenuAndlnbMenuPopupOnResize() {
 }
 
 export function closeLnbMenuPopupToScrollDown() {
-  if (isScrollDown()) {
+  if (scrollState === 'down') {
     closeLnbMenuPopup();
   }
 }
@@ -175,8 +175,6 @@ headerGnbItems.forEach((item) => {
 });
 
 header.addEventListener('mouseenter', startHeaderBottomObserverOnHover);
-
-// window.addEventListener('scroll', closeLnbMenuPopupToScrollDown);
 
 header.addEventListener('mouseleave', showLnbMenuButtonOnMouseleave);
 

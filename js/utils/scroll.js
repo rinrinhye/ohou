@@ -1,15 +1,13 @@
 export let currentScrollY = window.scrollY;
+export let scrollState;
 
 export function resetScrollTop(target) {
   target.scrollTop = 0;
 }
 
-export function updateCurrentScrollY() {
+export function updateScrollState() {
+  scrollState = currentScrollY < window.scrollY ? 'down' : 'up';
   currentScrollY = scrollY;
-}
-
-export function isScrollDown() {
-  return currentScrollY < window.scrollY ? true : false;
 }
 
 export function preventScroll() {

@@ -1,6 +1,6 @@
 import { addClassList, removeClassList } from './utils/classlist.js';
 import { isResponsiveSM } from './utils/responsive.js';
-import { currentScrollY, isScrollDown } from './utils/scroll.js';
+import { currentScrollY, scrollState } from './utils/scroll.js';
 
 const header = document.querySelector('.header');
 const headerBottom = document.querySelector('.header__bottom');
@@ -24,7 +24,7 @@ function showHeaderBottom() {
 
 export function toggleHeaderVisibilityOnScroll() {
   if (isResponsiveSM()) {
-    if (isScrollDown() && window.scrollY !== 0) {
+    if (scrollState === 'down' && window.scrollY !== 0) {
       hideHeader();
     } else {
       showHeader();
@@ -32,7 +32,7 @@ export function toggleHeaderVisibilityOnScroll() {
   }
 
   if (!isResponsiveSM()) {
-    if (isScrollDown() && !lnbMenuPopup.classList.contains('on')) {
+    if (scrollState === 'down' && !lnbMenuPopup.classList.contains('on')) {
       hideHeaderBottom();
     } else {
       showHeaderBottom();
