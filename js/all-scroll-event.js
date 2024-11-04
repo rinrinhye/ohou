@@ -2,7 +2,6 @@ import { setPopupPositionOnScroll } from './popup-transform.js';
 import { toggleHeaderVisibilityOnScroll } from './header.js';
 import { closeLnbMenuPopupToScrollDown } from './lnb-popup.js';
 import { updateScrollState } from './utils/scroll.js';
-// import { updateCurrentScrollY } from './utils/scroll.js';
 
 const lnbMenuPopup = document.querySelector('.lnb-menu-popup');
 

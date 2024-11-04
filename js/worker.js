@@ -1,49 +1,35 @@
+let timer;
+
 onmessage = function (e) {
+  if (e.data.type === 'start') {
+    timerStart();
+  }
   if (e.data.type === 'end') {
     clearInterval(timer);
-    worker.terminate();
+    close();
   }
 };
 
-setTimeout(() => {
-  const { hours, minutes, seconds } = getRemainingTimeComponents();
+function timerStart() {
+  postMessage(getRemainingTime());
 
-  postMessage({ hours, minutes, seconds });
-}, 0);
-
-function timer() {
-  const { hours, minutes, seconds } = getRemainingTimeComponents();
-
-  postMessage({ hours, minutes, seconds });
+  timer = setInterval(() => {
+    postMessage(getRemainingTime());
+  }, 1000);
 }
 
-setInterval(timer, 1000);
+function getRemainingTime() {
+  const now = new Date();
+  const currentHours = now.getHours();
+  const currentMinutes = now.getMinutes();
+  const currentSeconds = now.getSeconds();
 
-function getRemainingTimeComponents() {
-  const currentHours = new Date().getHours();
-  const currentMinutes = new Date().getMinutes();
-  const currentSeconds = new Date().getSeconds();
+  const hours =
+    currentHours === 0 ? '23' : (23 - currentHours).toString().padStart(2, '0');
 
-  let hours;
+  const minutes = (59 - currentMinutes).toString().padStart(2, '0');
 
-  if (currentHours !== 0) {
-    hours =
-      23 - currentHours === 23
-        ? '00'
-        : (23 - currentHours).toString().padStart(2, '0');
-  } else {
-    hours = '23';
-  }
-
-  const minutes =
-    59 - currentMinutes === 59
-      ? '00'
-      : (59 - currentMinutes).toString().padStart(2, '0');
-
-  const seconds =
-    60 - currentSeconds === 60
-      ? '00'
-      : (60 - currentSeconds).toString().padStart(2, '0');
+  const seconds = (59 - currentSeconds).toString().padStart(2, '0');
 
   return { hours, minutes, seconds };
 }

@@ -43,25 +43,35 @@ export const worker = new Worker(new URL('./worker.js', import.meta.url));
 
 const timeBadges = document.querySelectorAll('.badge--time');
 
-timeBadges.forEach((badge) => {
-  const hours = new Date().getHours().toString().padStart(2, '0');
-  const minutes = new Date().getMinutes().toString().padStart(2, '0');
-  const seconds = new Date().getSeconds().toString().padStart(2, '0');
-  badge.innerText = `${hours}:${minutes}:${seconds} 남음`;
-});
+function displayTime() {
+  const now = new Date();
+  const hours = now.getHours().toString().padStart(2, '0');
+  const minutes = now.getMinutes().toString().padStart(2, '0');
+  const seconds = now.getSeconds().toString().padStart(2, '0');
 
+  updateTime(hours, minutes, seconds);
+}
+
+function updateTime(hours, minutes, seconds) {
+  const content =
+    hours === '00' && minutes === '00' && seconds === '00'
+      ? '마감'
+      : `${hours}:${minutes}:${seconds} 남음`;
+
+  timeBadges.forEach((badge) => {
+    badge.innerText = content;
+  });
+}
+
+displayTime();
 worker.postMessage({ type: 'start' });
 
 worker.onmessage = function (e) {
   const { hours, minutes, seconds } = e.data;
+
+  updateTime(hours, minutes, seconds);
+
   if (hours === '00' && minutes === '00' && seconds === '00') {
-    timeBadges.forEach((badge) => {
-      badge.innerText = `마감`;
-    });
     this.postMessage({ type: 'end' });
-  } else {
-    timeBadges.forEach((badge) => {
-      badge.innerText = `${hours}:${minutes}:${seconds} 남음`;
-    });
   }
 };
