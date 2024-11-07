@@ -1913,6 +1913,8 @@ body {
 .header__search-group__input {
   width: 196px;
   height: 40px;
+  top: 6px;
+  left: 7px;
   padding: 0 40px;
   border: 1px solid #eaedef;
   border-radius: 4px;

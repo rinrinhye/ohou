@@ -1,7 +1,16 @@
 const bannerSlide = new Swiper('.banner-slide__wrapper', {
-  autoplay: true,
+  autoplay: {
+    pauseOnMouseEnter: true,
+  },
   loop: true,
-  pauseOnMouseEnter: true,
+  navigation: {
+    nextEl: '.banner-slide .slide-next',
+    prevEl: '.banner-slide .slide-prev',
+  },
+  a11y: {
+    nextSlideMessage: '다음',
+    prevSlideMessage: '이전',
+  },
   on: {
     init: (swiper) => {
       const slide = document.querySelector('.banner-slide');
@@ -21,9 +30,5 @@ const bannerSlide = new Swiper('.banner-slide__wrapper', {
       );
       currentSlideNumber.textContent = swiper.realIndex + 1;
     },
-  },
-  navigation: {
-    nextEl: '.banner-slide .slide-next',
-    prevEl: '.banner-slide .slide-prev',
   },
 });

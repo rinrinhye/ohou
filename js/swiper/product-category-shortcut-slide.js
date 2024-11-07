@@ -7,10 +7,14 @@ const productCategoryShortcutSlide = new Swiper(
     spaceBetween: 12,
     watchSlidesProgress: true,
     slidesPerGroupAuto: true,
+    a11y: {
+      nextSlideMessage: '다음',
+      prevSlideMessage: '이전',
+    },
     on: {
-      progress: (swiper, progress) =>
+      progress: (_, progress) =>
         showAndHideSlideArrowButtons(
-          swiper,
+          _,
           progress,
           '.product-category-shortcut-slide'
         ),

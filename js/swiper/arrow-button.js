@@ -1,4 +1,4 @@
-export function showAndHideSlideArrowButtons(swiper, progress, className) {
+export function showAndHideSlideArrowButtons(_, progress, className) {
   const slide = document.querySelector(className);
   const prevButton = slide.querySelector('.slide-prev');
   const nextButton = slide.querySelector('.slide-next');

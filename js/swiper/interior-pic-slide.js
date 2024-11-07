@@ -3,16 +3,17 @@ import { showAndHideSlideArrowButtons } from './arrow-button';
 const interiorPicSlide = new Swiper('.interior-pic-slide__wrapper', {
   slidesPerView: 2.5,
   spaceBetween: 12,
-  observer: true,
-  observeParents: true,
-  observeSlideChildren: true,
   navigation: {
     nextEl: '.interior-pic-slide .slide-next',
     prevEl: '.interior-pic-slide .slide-prev',
   },
+  a11y: {
+    nextSlideMessage: '다음',
+    prevSlideMessage: '이전',
+  },
   on: {
-    progress: (swiper, progress) =>
-      showAndHideSlideArrowButtons(swiper, progress, '.interior-pic-slide'),
+    progress: (_, progress) =>
+      showAndHideSlideArrowButtons(_, progress, '.interior-pic-slide'),
   },
   breakpoints: {
     769: {
