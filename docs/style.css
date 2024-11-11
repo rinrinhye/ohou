@@ -671,9 +671,6 @@ body {
   margin-bottom: 16px;
 }
 @media screen and (min-width: 768px) {
-  .section--main__container {
-    padding: 30px 40px 40px;
-  }
   .section--main__top {
     display: flex;
     margin-bottom: 30px;
@@ -691,18 +688,8 @@ body {
   }
 }
 @media screen and (min-width: 1024px) {
-  .section--main__container {
-    padding: 30px 60px 40px;
-  }
   .section--main__top {
     gap: 20px;
-  }
-}
-@media screen and (min-width: 1024px) {
-  .section--main__container {
-    max-width: 1256px;
-    margin: 0 auto;
-    border: 0;
   }
 }
 
@@ -1913,8 +1900,6 @@ body {
 .header__search-group__input {
   width: 196px;
   height: 40px;
-  top: 6px;
-  left: 7px;
   padding: 0 40px;
   border: 1px solid #eaedef;
   border-radius: 4px;
